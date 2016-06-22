@@ -28,6 +28,7 @@ class MyStack {
             q2.offer(q1.poll());
         }
         int top = q1.poll();
+        q2.offer(top);
         Queue<Integer> temp = q1;
         q1 = q2;
         q2 = temp;
