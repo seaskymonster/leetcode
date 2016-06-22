@@ -12,7 +12,7 @@ class MyQueue {
 
     // Removes the element from in front of queue.
     public void pop() {
-        if(stack2.isEmpty(){
+        if(stack2.isEmpty()){
             while(!stack1.isEmpty()){
                 stack2.push(stack1.pop());
             }
