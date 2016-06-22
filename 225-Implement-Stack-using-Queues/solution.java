@@ -13,7 +13,7 @@ class MyStack {
 
     // Removes the element on top of the stack.
     public void pop() {
-        while(q1.size() >=1){
+        while(q1.size() >1){
             q2.offer(q1.poll());
         }
         q1.poll();
@@ -24,7 +24,7 @@ class MyStack {
 
     // Get the top element.
     public int top() {
-        while(q1.size() >=1){
+        while(q1.size() >1){
             q2.offer(q1.poll());
         }
         int top = q1.poll();
