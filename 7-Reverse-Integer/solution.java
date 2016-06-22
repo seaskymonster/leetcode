@@ -8,6 +8,6 @@ public class Solution {
         if(x < Integer.MIN_VALUE || x > Integer.MAX_VALUE){
             return 0;
         }
-        return result;
+        return int(result);
     }
 }
