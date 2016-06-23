@@ -19,7 +19,7 @@ public class Solution {
         f[start] = nums[start];
         f[start+1] = Math.max(nums[start], nums[start+1]);
         for(int i = start+2; i <= end; i++){
-            f[i] = Math.max(f[i-2] + nums[i], f[i]);
+            f[i] = Math.max(f[i-2] + nums[i], f[i-1]);
         }
         
         return f[end];
