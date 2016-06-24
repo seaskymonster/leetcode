@@ -43,6 +43,7 @@ public class Solution {
         if(right != null){
             return right;
         }
+        return null;// left and right are null, return null
         
     }
 }
