@@ -18,7 +18,7 @@ public class BSTIterator {
             cur = cur.left;
         }
         TreeNode node = stack.pop();
-        cur = cur.right;
+        cur = node.right;
         return node.val;
     }
 }
