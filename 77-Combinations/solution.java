@@ -14,7 +14,7 @@ public class Solution {
         if(k == 0){
             result.add(new ArrayList(path));
         }
-        for(int i = pos; i <= n; i++){
+        for(int i = pos; i <= n; i++){ // remeber this is i<= n not i< n, because n is needed.
             path.add(i);
             helper(result, path, i+1, n, k-1);
             path.remove(path.size()-1);
