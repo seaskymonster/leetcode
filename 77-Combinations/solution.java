@@ -1,6 +1,6 @@
 public class Solution {
     public List<List<Integer>> combine(int n, int k) {
-      List<List<Integer>> result = new ArrayList<Integer>();
+      List<List<Integer>> result = new ArrayList<>();
       if(n < k){
           return result;
       }
@@ -12,11 +12,11 @@ public class Solution {
     
     public void helper(List<List<Integer>> result, List<Integer> path, int pos, int n, int k){
         if(k == 0){
-            result.add(path);
+            result.add(new ArrayList(path));
         }
-        for(int i = pos; i < n; i++){
+        for(int i = pos; i <= n; i++){
             path.add(i);
-            helper(result, path, pos+1, n, k-1);
+            helper(result, path, i+1, n, k-1);
             path.remove(path.size()-1);
         }
     }
