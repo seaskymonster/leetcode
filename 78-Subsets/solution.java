@@ -4,7 +4,7 @@ public class Solution {
       if(nums.length == 0) {
           return result;
       }
-      List<Integer> path;
+      List<Integer> path = new ArrayList<Integer>(); // why this need to be initialized ?
       int pos = 0;
       helper(nums, pos, path, result);
       return result;
