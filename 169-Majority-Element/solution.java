@@ -6,7 +6,7 @@ public class Solution {
             if(count == 0){
                 candidate = nums[i];
                 count++;
-            }else if(nums[i] == candidate){
+            }else if(nums[i] == candidate){ // 这个地方要用else if。。。。
                 count++;
             }else{
                 count--;
