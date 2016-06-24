@@ -11,7 +11,7 @@ public class Solution {
     public void helper(int[] nums, int pos, List<Integer> path, List<List<Integer>>result ){
         result.add(new ArrayList(path));
         for(int i = pos; i < nums.length; i++){
-            if(i!=pos && nums[i] == nums[i-1]){
+            if(i!=pos && nums[i] == nums[i-1]){ // we don't need check i > 0
                 continue;
             }
             path.add(nums[i]);
