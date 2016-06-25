@@ -5,7 +5,7 @@ public class Solution {
            return findfortheKth(nums1, nums2, length/2+1, 0, nums1.length-1, 0, nums2.length-1);
         }else{
           return (findfortheKth(nums1, nums2, length/2, 0, nums1.length-1, 0, nums2.length-1)
-                 +findfortheKth(nums1, nums2, length/2+1, 0, nums1.length-1, 0, nums2.length-1))/2;
+                 +findfortheKth(nums1, nums2, length/2+1, 0, nums2.length-1, 0, nums2.length-1))/2;
 
         }
     }
@@ -13,10 +13,10 @@ public class Solution {
     
     public int findfortheKth(int[] nums1, int[] nums2, int k, int s1, int e1, int s2, int e2){
         if(s1 > e1){
-            return nums2[s1+k-1];
+            return nums2[s2+k-1];
         }
         if(s2 > e2) {
-            return nums1[s2+k-1];
+            return nums1[s1+k-1];
         }
         if(k == 1){
             return Math.min(nums1[s1], nums2[s2]);
