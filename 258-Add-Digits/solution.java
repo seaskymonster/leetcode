@@ -1,5 +1,5 @@
 public class Solution {
-    public int addDigits(int num) {
+    public int addDigits(int num) {  // recursive call the sumDigits function.
        while(num/10 >= 1){
            num = sumDigits(num);
        }
