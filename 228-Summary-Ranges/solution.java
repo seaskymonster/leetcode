@@ -17,7 +17,7 @@ public class Solution {
                    sb = new StringBuilder();
                    newstring = true;
                 }else{
-                   countinue;
+                   continue;
                 }
            }
         }
