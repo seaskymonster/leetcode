@@ -12,6 +12,8 @@ public class Solution {
             int tmp = nums[from];
             nums[from] = nums[to];
             nums[to] = tmp;
+            from++;
+            to--;
         }
     }
 }
