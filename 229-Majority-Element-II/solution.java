@@ -38,7 +38,7 @@ public class Solution {
                 countfor2++;
             }
         }
-        if(countfor1 >= nums.length/3 +1){
+        if(countfor1 >= nums.length/3 +1){  // here is important to make sure it is greater than 1/3
             result.add(candidate1);
         }
         if(countfor2 >= nums.length/3 +1){
