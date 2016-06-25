@@ -5,8 +5,8 @@ public class Solution {
         }
         String[] sa = s.split(" ");// remove the empty space. so if the string before only includes empty string, it may return nothing at last.
         StringBuilder sb = new StringBuilder();
-        for(int i = sa.length-1; i >= 0; i++){
-            if(sa[i] != ""){
+        for(int i = sa.length-1; i >= 0; i--){
+            if(!sa[i].equals("")){
                sb.append(sa[i]).append(" ");
             }
         }
