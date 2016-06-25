@@ -27,10 +27,10 @@ public class Solution {
         }
         
         int min = Integer.MAX_VALUE;
-        int maxsub = 0;
+        int maxsub = Integer.MIN_VALUE;
         for (int j = 0; j < sum.length; j++){
             maxsub = Math.max(maxsub, sum[j]-min);
-            min = Math.min(min, sub[j]);
+            min = Math.min(min, sum[j]);
         }
         return maxsub;
     }
