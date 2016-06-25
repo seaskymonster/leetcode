@@ -8,9 +8,9 @@ public class Solution {
         StringBuilder sb = new StringBuilder();
         for( int i = 0; i < nums.length; i++){
            if(nums[i] != nums[i-1] + 1 || i == nums.length-1){
-                sb.append(nums[start])
+                sb.append(nums[start]);
                 if(start != i){
-                   append("->").append(nums[i]);
+                   sb.append("->").append(nums[i]);
                 }
                 result.add(sb.toString());
                 sb = new StringBuilder();
