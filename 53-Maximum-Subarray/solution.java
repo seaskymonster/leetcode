@@ -29,8 +29,8 @@ public class Solution {
         int min = Integer.MAX_VALUE;
         int maxsub = 0;
         for (int j = 0; j < sum.length; j++){
-            maxsub = Math.max(maxsub, sum[i]-min);
-            min = Math.min(min, sub[i]);
+            maxsub = Math.max(maxsub, sum[j]-min);
+            min = Math.min(min, sub[j]);
         }
         return maxsub;
     }
