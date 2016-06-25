@@ -38,7 +38,7 @@ public class Solution {
                 }
             }
         }
-        if((borad[i][j] & 1) ==1){
+        if((board[i][j] & 1) ==1){
             result--;
         }
         return result;
