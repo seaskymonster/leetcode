@@ -4,27 +4,22 @@ public class Solution {
         if(nums == null || nums.length == 0){
             return result;
         }
+        int start = 0;
         StringBuilder sb = new StringBuilder();
-        boolean newstring = true;
         for( int i = 0; i < nums.length; i++){
-            if(newstring){
-                sb.append(nums[i]);
-                newstring = false;
-            }else{
-                if(nums[i] != nums[i-1] + 1){
-                   sb.append(" ").append(nums[i]);
-                   result.add(sb);
-                   sb = new StringBuilder();
-                   newstring = true;
-                }else{
-                   continue;
+           if(nums[i] != nums[i-1] + 1 || i == nums.length-1){
+                sb.append(nums[start])
+                if(start != i){
+                   append("->").append(nums[i]);
                 }
-           }
+                result.add(sb.toString());
+                sb = new StringBuilder();
+                start = i+1;
+             }else{
+                   continue;
+             }
         }
-        if(newstring == false){
-            result.add(sb);
-        }
-        
+       
         return result;
         
     }
