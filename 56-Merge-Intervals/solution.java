@@ -27,11 +27,9 @@ public class Solution {
        result.add(last);
        return result;
     }
-    
-    
-    private Class IntervalComparator implements Comparator<Interval> {
+    private class IntervalComparator implements Comparator<Interval> {
         public int compare(Interval a, Interval b){
-            return a.start - b.start;
+          return a.start - b.start;
         }
     }
 }
