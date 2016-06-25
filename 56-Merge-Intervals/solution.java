@@ -7,7 +7,7 @@
  *     Interval(int s, int e) { start = s; end = e; }
  * }
  */
-public class Solution {
+public class Solution { // 这个题先排序，然后一个一个的merge。。。。
     public List<Interval> merge(List<Interval> intervals) {
        if(intervals == null || intervals.size() <=1){
            return intervals;
