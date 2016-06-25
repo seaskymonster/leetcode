@@ -6,7 +6,7 @@ public class Solution {
         String[] sa = s.split(" ");// remove the empty space. so if the string before only includes empty string, it may return nothing at last.
         StringBuilder sb = new StringBuilder();
         for(int i = sa.length-1; i >= 0; i--){
-            if(!sa[i].equals("")){
+            if(!sa[i].equals("")){ // remember use equals to check two string are equal or not.
                sb.append(sa[i]).append(" ");
             }
         }
