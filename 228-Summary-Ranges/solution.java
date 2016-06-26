@@ -30,12 +30,12 @@ public class Solution {
             return result;
         }
       
-        for( int i = 0, j = 0; i < nums.length; i++){
-          if(i= nums[i].length-1 || nums[i] != nums[i+1]-1){
+        for( int i = 0 , j = 0; i < nums.length; i++){
+          if(i == nums.length-1 || nums[i] != nums[i+1]-1){
               if(i == j){
                   result.add(nums[i] + "");
               }else{
-                  result.add(nums[j] + "->" + nums[i])
+                  result.add(nums[j] + "->" + nums[i]);
               }
               j = i+1;
           }
