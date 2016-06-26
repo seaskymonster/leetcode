@@ -30,7 +30,7 @@ public class Solution {
             return result;
         }
       
-        for( int i = 0; j = 0; i < nums.length; i++){
+        for( int i = 0, j = 0; i < nums.length; i++){
           if(i= nums[i].length-1 || nums[i] != nums[i+1]-1){
               if(i == j){
                   result.add(nums[i] + "");
