@@ -1,9 +1,10 @@
 public class NumMatrix {
     int[][] array;
     public NumMatrix(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0) return;
         array = new int[matrix.length][matrix[0].length +1];
         for(int i = 0; i < array.length; i++){
-            for(int j = 0; j < array.length - 1; j++){
+            for(int j = 0; j < array[0].length - 1; j++){
                 array[i+1][j] = array[i][j] + matrix[i][j];
             }
         }
