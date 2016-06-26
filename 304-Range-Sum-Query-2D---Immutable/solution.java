@@ -14,6 +14,7 @@ public class NumMatrix {
         for(int i = row1; i <= row2; i++){
             sum += array[i][col2+1] - array[i][col1];
         }
+        return sum;
     }
 }
 
