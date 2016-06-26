@@ -7,7 +7,7 @@ public class Solution {
                if(!word[j]){
                    continue;
                }else{
-                   if(wordDict.contains(s.substring(j, i)){
+                   if(wordDict.contains(s.substring(j, i))){
                        word[i] = true;
                        break;
                    }
