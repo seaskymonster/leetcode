@@ -7,7 +7,7 @@ public class Solution {
         int start = 0;
         StringBuilder sb = new StringBuilder();
         for( int i = 0; i < nums.length; i++){
-           if(nums[i] != nums[i+1] - 1 || i == nums.length-1){
+           if(i == nums.length-1 || nums[i] != nums[i+1] - 1 ){
                 sb.append(nums[start]);
                 if(start != i){
                    sb.append("->").append(nums[i]);
