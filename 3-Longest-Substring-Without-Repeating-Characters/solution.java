@@ -52,7 +52,7 @@ public class Solution {
         int ans = 0, i = 0, j = 0;
         while (i < n && j < n) {
             // try to extend the range [i, j]
-            if (!set.contains(s.charAt(j))){
+            if (!map.contains(s.charAt(j))){
                 map.add(s.charAt(j), j);
                 j++;
                 ans = Math.max(ans, j - i);
