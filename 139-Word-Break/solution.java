@@ -3,7 +3,7 @@ public class Solution {
        boolean[] word = new boolean [s.length()+1];// word[i] means substring from 0 to i is a perfect word
        word[0] = true;
        for(int i = 1; i <= s.length(); i++){
-           for(int j = 1; j <= i ; j++){
+           for(int j = 0; j < i ; j++){
                if(!word[j]){
                    continue;
                }else{
@@ -14,6 +14,6 @@ public class Solution {
                }
            }
        }
-       return word[word.length()-1];
+       return word[word.length-1];
     }
 }
