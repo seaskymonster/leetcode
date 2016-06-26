@@ -3,9 +3,9 @@ public class NumMatrix {
     public NumMatrix(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0) return;
         array = new int[matrix.length][matrix[0].length +1];
-        for(int i = 0; i < array.length; i++){
-            for(int j = 0; j < array[0].length - 1; j++){
-                array[i+1][j] = array[i][j] + matrix[i][j];
+        for(int i = 0; i < matrix.length; i++){
+            for(int j = 0; j < matrix[0].length; j++){
+                array[i][j+1] = array[i][j] + matrix[i][j];
             }
         }
     }
