@@ -48,7 +48,7 @@
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
         int n = s.length();
-        Map<Character, Integer> map = new HashSet<>();
+        Map<Character, Integer> map = new HashMap<>();
         int ans = 0, i = 0, j = 0;
         while (i < n && j < n) {
             // try to extend the range [i, j]
