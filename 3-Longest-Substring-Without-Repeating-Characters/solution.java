@@ -24,45 +24,45 @@
 //     }
 // }
 
-// public class Solution {
-//     public int lengthOfLongestSubstring(String s) {
-//         int n = s.length();
-//         Set<Character> set = new HashSet<>();
-//         int ans = 0, i = 0, j = 0;
-//         while (i < n && j < n) {
-//             // try to extend the range [i, j]
-//             if (!set.contains(s.charAt(j))){
-//                 set.add(s.charAt(j++));
-//                 ans = Math.max(ans, j - i);
-//             }
-//             else {
-//                 set.remove(s.charAt(i++)); // why remove the s.charAt(i++); 这里是一点一点移动，一直到把 重复的语速删掉
-//             }
-//         }
-//         return ans;
-//     }
-// }
-
-
-
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
         int n = s.length();
-        Map<Character, Integer> map = new HashMap<>();
+        Set<Character> set = new HashSet<>();
         int ans = 0, i = 0, j = 0;
         while (i < n && j < n) {
             // try to extend the range [i, j]
-            if (!map.containsKey(s.charAt(j))){
-                map.add(s.charAt(j), j);
+            if (!set.contains(s.charAt(j))){
+                set.add(s.charAt(j));
                 j++;
                 ans = Math.max(ans, j - i);
             }
             else {
-                i = map.get(s.charAt(j)) + 1;
-                map.add(s.charAt(j), j);
-                j++;
+                set.remove(s.charAt(i)); // why remove the s.charAt(i++); 这里是一点一点移动，一直到把 重复的语速删掉
+                i++;
             }
         }
         return ans;
     }
 }
+
+
+
+// public class Solution {
+//     public int lengthOfLongestSubstring(String s) {
+//         int n = s.length();
+//         Map<Character, Integer> map = new HashMap<Character, Integer>();
+//         int ans = 0, i = 0, j = 0;
+//         while (i < n && j < n) {
+//             // try to extend the range [i, j]
+//             if (!map.containsKey(s.charAt(j))){
+//                 map.put(s.charAt(j++), j);
+//                 ans = Math.max(ans, j - i);
+//             }
+//             else {
+//                 i = map.get(s.charAt(j)) + 1;
+//                 map.put(s.charAt(j++), j);
+//             }
+//         }
+//         return ans;
+//     }
+// }
