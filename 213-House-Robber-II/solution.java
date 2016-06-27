@@ -18,7 +18,7 @@ public class Solution {
             return Math.max(nums[start], nums[end]); // the corner case should be considered above...
         }
         
-        int[] f = new int[end - start + 1];
+        int[] f = new int[end - start + 1]; // 可以用 new int[end +1];
         f[0] = nums[start];
         f[1] = Math.max(nums[start], nums[start+1]);
         for(int i = 2; i <= end-start; i++){
