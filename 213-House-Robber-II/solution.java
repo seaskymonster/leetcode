@@ -12,16 +12,16 @@ public class Solution {
             return nums[start];
         }
         if(start + 1 == end){
-            return Math.max(nums[start], nums[end]);
+            return Math.max(nums[start], nums[end]); // the corner case should be considered above...
         }
         
         int[] f = new int[end - start + 1];
-        f[start] = nums[start];
-        f[start+1] = Math.max(nums[start], nums[start+1]);
-        for(int i = start+2; i <= end; i++){
-            f[i] = Math.max(f[i-2] + nums[i], f[i-1]);
+        f[0] = nums[start];
+        f[1] = Math.max(nums[start], nums[start+1]);
+        for(int i = 2; i <= end-start; i++){
+            f[i] = Math.max(f[i-2] + nums[i+start], f[i-1]);
         }
         
-        return f[end];
+        return f[end-start];
     }
 }
