@@ -20,3 +20,5 @@ public class Solution {
         return head;
     }
 }
+
+//如果想优化，可以不用判断 head是否等于null， 可以把这句放到while里面， while(cur != null && cur.next != null)
