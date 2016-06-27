@@ -11,7 +11,7 @@ public class Solution {
     }
     
     public void helper(int[] nums, int pos, List<Integer> path, List<List<Integer>> result){
-        result.add(new ArrayList(path));
+        result.add(new ArrayList(path)); // 这个地方一定要用new
         for(int i = pos; i < nums.length; i++){
             path.add(nums[i]);
             helper(nums, i+1, path, result);
