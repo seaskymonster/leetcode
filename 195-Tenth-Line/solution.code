@@ -12,4 +12,4 @@
 #Solution Three:
 #sed -n 10p file.txt
 
-tail -n file.txt +10
+tail -n file.txt 10
