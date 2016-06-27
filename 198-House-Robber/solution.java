@@ -12,7 +12,7 @@ public class Solution {
         if(nums.length > 2){
             for(int i = 2; i < nums.length; i++){
                 if(f[i-1] == f[i-2]){
-                    f[i] = f[i-1] + nums[i];
+                    f[i] = f[i-1] + nums[i]; // this if is not necessary....
                 }else{
                     f[i] = Math.max(f[i-1], f[i-2]+nums[i]);
                 }
