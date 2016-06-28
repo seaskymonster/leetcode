@@ -4,13 +4,16 @@ public class Solution {
         if(s == null || s.length() < 10){
             return result;
         }
-        HashSet<String> set = new HashSet<String>();
+        HashMap<String, Integer> map = new HashSet<String, Integer>();
         for(int i = 0; i <= s.length()-10; i++){
             String tmp = s.substring(i, i+10);
-            if(set.contains(tmp)){
-                result.add(new String(tmp));
+            if(map.containsKey(tmp)){
+                if(map.get(tmp) == 1){
+                   result.add(new String(tmp));
+                }
+                map.put(tmp, map.get(tmp) + 1);
             }else{
-                map.add(tmp);
+                map.put(tmp, 1);
             }
         }
         
