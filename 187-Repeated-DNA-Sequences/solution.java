@@ -4,7 +4,7 @@ public class Solution {
         if(s == null || s.length() < 10){
             return result;
         }
-        HashMap<String, Integer> map = new HashSet<String, Integer>();
+        HashMap<String, Integer> map = new HashMap<String, Integer>();
         for(int i = 0; i <= s.length()-10; i++){
             String tmp = s.substring(i, i+10);
             if(map.containsKey(tmp)){
