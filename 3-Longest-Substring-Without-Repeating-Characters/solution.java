@@ -33,8 +33,8 @@ public class Solution {
             // try to extend the range [i, j]
             if (!set.contains(s.charAt(j))){
                 set.add(s.charAt(j));
+                ans = Math.max(ans, j - i +1);
                 j++;
-                ans = Math.max(ans, j - i);
             }
             else {
                 set.remove(s.charAt(i)); // why remove the s.charAt(i++); 这里是一点一点移动，一直到把 重复的语速删掉
