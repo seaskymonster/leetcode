@@ -26,7 +26,7 @@ public class Solution {
                     dup ++;
                 }else{
                    double k = (points[j].x == points[i].x) ? Integer.MAX_VALUE : 0.0 + (double)(points[j].y - points[i].y)/
-                   (double)(points[j].x -points[i].x);
+                   (double)(points[j].x -points[i].x); //这里是为处理 +0.0 和 - 0.0， 我们都要把它弄成0.0， 所以用0.0 加一下。
                    if(map.containsKey(k)){
                        map.put(k, map.get(k) + 1);
                    }else{
@@ -35,7 +35,7 @@ public class Solution {
                 }
             }
             if(map.size() == 0){
-                max = Math.max(max, dup+1);
+                max = Math.max(max, dup+1); // 这种情况所有的点都在选定的点上，那么就是重复的点+1 这么多个。
             }else{
                for(Double k_value: map.keySet()){
                    max = Math.max(max, map.get(k_value)+ dup);
