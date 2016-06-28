@@ -9,7 +9,9 @@
 public class Solution {
     public RandomListNode copyRandomList(RandomListNode head) {
         // 我们可以用hashmap存 old node - new node， 那样的话，第二遍扫描的时候，我们可以根据 原来list找到random node， 然后对应找到新的node
-        
+        if(head == null){
+            return null;
+        }
         HashMap<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
         RandomListNode newhead = new RandomListNode(head.label);
         map.put(head, newhead);
