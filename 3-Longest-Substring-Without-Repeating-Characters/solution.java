@@ -53,14 +53,18 @@ public class Solution {
         while (i < n && j < n) {
             // try to extend the range [i, j]
             if (!map.containsKey(s.charAt(j))){
-                map.put(s.charAt(j), j);
                 ans = Math.max(ans, j - i +1);
-                j++;
             }
             else {
                 int pos = map.get(s.charAt(j));
-                i = pos + 1;
+                if(pos >= i){
+                    i = pos + 1;
+                }else{
+                  ans = Math.max(ans, j - i +1); // 如果找到的比较小，就跟没找到是一样的。
+                }
             }
+            map.put(s.charAt(j), j);
+            j++;
         }
         return ans;
     }
