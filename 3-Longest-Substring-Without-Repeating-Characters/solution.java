@@ -53,7 +53,7 @@ public class Solution {
         while (i < n && j < n) {
             // try to extend the range [i, j]
             if (!map.containsKey(s.charAt(j))){
-                map.push(s.charAt(j), j);
+                map.put(s.charAt(j), j);
                 ans = Math.max(ans, j - i +1);
                 j++;
             }
