@@ -19,4 +19,6 @@ public class Solution {
         
         return result;
     }
+    
+    //一开始用hashset做的，但是呢，set不能统计个数，只是看有没有这个substring，所以有的substring出现多余两次，就会在结果中有重复的，所以最后用hashmap统计次数，当取出来的次数是1的时候，我们才能往result里面加入这个string
 }
