@@ -17,6 +17,7 @@ public class Solution {
         map.put(head, newhead);
         RandomListNode pre = newhead;
         RandomListNode node = head.next;
+        // 以上是创建新的head，让pre 等于head，然后下边就开始loop，一遍loop 一遍把两个list对应的点存到map里面
         while(node != null){
             RandomListNode newnode = new RandomListNode(node.label);
             map.put(node, newnode);
