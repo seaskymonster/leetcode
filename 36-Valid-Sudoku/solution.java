@@ -38,7 +38,7 @@ public class Solution {
 
                 for ( int k = 0; k < 9; k++){
                     if(board[i + k/3][j + k%3] != '.'){
-                    if(set.contains(board[i + k/3][j + k%3])){
+                    if(set.contains(board[i + k/3][j + k%3])){ // 注意这个地方，怎么扫描一个九宫格。。
                         return false;
                     }else{
                         set.add(board[i + k/3][j + k%3]);
