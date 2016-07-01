@@ -6,7 +6,7 @@ public class Solution {
         }
         Arrays.sort(nums);
         for(int i = 0; i < nums.length-2; i++){
-            if(i >= 1 && nums[i] == nums[i-1]){
+            if(i >= 1 && nums[i] == nums[i-1]){ //第一个元素放过去的办法。
                 continue;
             }
             int target = 0 - nums[i];
@@ -21,7 +21,7 @@ public class Solution {
                     result.add(new ArrayList<>(path));
                     start++;
                     end--;
-                    while(start < end && nums[start] == nums[start-1]){
+                    while(start < end && nums[start] == nums[start-1]){ // while里面的while
                         start++; // 这里不能出错
                     }
                     while(start < end && nums[end] == nums[end+1]){
