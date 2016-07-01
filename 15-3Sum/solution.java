@@ -19,10 +19,10 @@ public class Solution {
                     path.add(nums[start]);
                     path.add(nums[end]);
                     result.add(new ArrayList<>(path));
-                    while(nums[start+1] == nums[start] && start < end){
+                    while(start < end && nums[start+1] == nums[start]){
                         start++; // 这里不能出错
                     }
-                    while(nums[end-1] == nums[end] && start <end){
+                    while(start < end && nums[end-1] == nums[end]){
                         end--; //这里不能出错
                     }
                 }else if(nums[start] + nums[end] > target){
