@@ -1,15 +1,30 @@
 public class Solution {
     public String reverseWords(String s) {
-        if(s == null || s.length() == 0 ){
-            return "";
+        if(s == null || s.length() == 0){
+            return s;
         }
-        String[] sa = s.split(" ");// remove the empty space. so if the string before only includes empty string, it may return nothing at last.
+        String[] sa = s.split(" ");
         StringBuilder sb = new StringBuilder();
-        for(int i = sa.length-1; i >= 0; i--){
-            if(!sa[i].equals("")){ // remember use equals to check two string are equal or not.
-               sb.append(sa[i]).append(" ");
-            }
+        for(int i = s.length -1 ; i >= 0 ; i--){
+            sb = sb + reverse(sa[i]) + " ";
         }
-        return sb.length() == 0? "":sb.substring(0,sb.length()-1); // java substring not include the last.
+        return sb.substring(0, sb.length()-1);
+    }
+    
+    public String reverse(String s) {
+        if(s == null || s.length() == 0){
+            return s;
+        }
+        char[] ca = s.toCharArray();
+        int i = 0;
+        int j = ca.length-1;
+        while(i < j){
+            char tmp = ca[i];
+            ca[i] = ca[j];
+            ca[j] = tmp;
+            i++;
+            j--;
+        }
+        return ca.toString();
     }
 }
