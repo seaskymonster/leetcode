@@ -4,12 +4,12 @@ public class Solution {
             return s;
         }
         String[] sa = s.split(" ");
-        if(sa.length == 0){
-            return ""; 
-        }
+    
         StringBuilder sb = new StringBuilder();
         for(int i = s.length() -1 ; i >= 0 ; i--){
-            sb = sb.append(sa[i]).append(" ");
+              if(!sa[i].equals("")){
+                  sb = sb.append(sa[i]).append(" ");
+              }
         }
         return sb.length() == 0 ? "": sb.substring(0, sb.length()-1);
     }
