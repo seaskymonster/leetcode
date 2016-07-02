@@ -16,16 +16,16 @@ public class Solution {
             }
             return left.val - right.val;
         }
-    }
+    };
     public ListNode mergeKLists(ListNode[] lists) {
-        if(lists == null || lists.size() == 0) {
+        if(lists == null || lists.length == 0) {
             return null;
         }
         
-        Queue<ListNode> heap = new PriorityQueue<ListNode>(lists.size(), ListNodeComparator);
-        for(int i = 0; i < lists.size(); i++){
-           if (lists.get(i) != null) {
-                heap.add(lists.get(i));
+        Queue<ListNode> heap = new PriorityQueue<ListNode>(lists.length, ListNodeComparator);
+        for(int i = 0; i < lists.length; i++){
+           if (lists[i] != null) {
+                heap.add(lists[i]);
             }
         }
         
@@ -34,6 +34,7 @@ public class Solution {
         while(!heap.isEmpty()){
             ListNode head = heap.poll();
             tail.next = head;
+            tail = head;
             if (head.next != null) {
                 heap.add(head.next);
             }
