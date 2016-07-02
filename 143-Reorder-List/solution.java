@@ -9,7 +9,7 @@
 public class Solution {
     public void reorderList(ListNode head) {
         if(head == null || head.next == null){
-            return head;
+            return;
         }
         ListNode mid = findMidNode(head);
         ListNode tail = reverse(mid);
@@ -18,7 +18,7 @@ public class Solution {
         
     }
     
-    public ListNode merge(ListNode left, ListNode right){
+    public void merge(ListNode left, ListNode right){
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
         int index = 0;
@@ -40,7 +40,7 @@ public class Solution {
         if(right != null){
             cur.next = right;
         }
-        return dummy.next;
+        return ;
     }
     
     public ListNode reverse(ListNode head){
