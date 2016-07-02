@@ -11,7 +11,7 @@ public class Solution {
         public int compare(ListNode left, ListNode right){
             if(left == null){
                 return 1;
-            }else(right == null){
+            }else if(right == null){
                 return -1;
             }
             return left.val - right.val;
