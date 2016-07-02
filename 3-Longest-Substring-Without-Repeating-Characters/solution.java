@@ -44,7 +44,30 @@
 //         return ans;
 //     }
 // }
-
+// public class Solution {
+//     public int lengthOfLongestSubstring(String s) {
+//         int n = s.length();
+//         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+//         int ans = 0, i = 0, j = 0; // i 是左边， j是右边
+//         while (i < n && j < n) {
+//             // try to extend the range [i, j]
+//             if (!map.containsKey(s.charAt(j))){
+//                 ans = Math.max(ans, j - i +1);
+//             }
+//             else {
+//                 int pos = map.get(s.charAt(j));
+//                 if(pos >= i){
+//                     i = pos + 1;
+//                 }else{
+//                   ans = Math.max(ans, j - i +1); // 如果找到的比较小，就跟没找到是一样的。
+//                 }
+//             }
+//             map.put(s.charAt(j), j);
+//             j++;
+//         }
+//         return ans;
+//     }
+// }
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
        if(s == null || s.length() == 0){
