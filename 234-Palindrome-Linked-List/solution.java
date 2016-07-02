@@ -23,6 +23,8 @@ public class Solution {
             }else{
                 break;
             }
+            p1 = p1.next;
+            p2 = p2.next;
         }
         return p2 == null;
     }
@@ -33,7 +35,7 @@ public class Solution {
         }
         ListNode slow = head;
         ListNode fast = head.next;
-        while(fast.next != null){
+        while(fast!= null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
         }
