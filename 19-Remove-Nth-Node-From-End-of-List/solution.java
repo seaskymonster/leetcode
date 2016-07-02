@@ -13,15 +13,15 @@ public class Solution {
                  ListNode fast = dummy;
 
         dummy.next = head;
-        for (int i = 1; i <= n; i++){
+        for (int i = 1; i <= n; i++){  // 先从dummy 找到第n个，如果第n个是null，说明这个list长度不够
             if(fast == null){
                 return null;
             }
             fast = fast.next;
         }
         
-        ListNode slow = dummy;
-        while(fast.next != null){
+        ListNode slow = dummy; // slow 一定要从dummy 开始。
+        while(fast.next != null){// 算好到哪个node停下。
             fast = fast.next;
             slow = slow.next;
         }
