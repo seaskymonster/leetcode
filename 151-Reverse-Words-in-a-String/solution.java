@@ -6,7 +6,7 @@ public class Solution {
         String[] sa = s.split(" ");
     
         StringBuilder sb = new StringBuilder();
-        for(int i = s.length() -1 ; i >= 0 ; i--){
+        for(int i = sa.length -1 ; i >= 0 ; i--){
               if(!sa[i].equals("")){
                   sb = sb.append(sa[i]).append(" ");
               }
