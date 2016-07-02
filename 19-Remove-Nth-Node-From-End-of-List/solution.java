@@ -9,8 +9,9 @@
 public class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         // slow 就是predelete， 所以必须从dummy 开始
-        ListNode fast = dummy;
          ListNode dummy = new ListNode(0);
+                 ListNode fast = dummy;
+
         dummy.next = head;
         for (int i = 1; i <= n; i++){
             if(fast == null){
