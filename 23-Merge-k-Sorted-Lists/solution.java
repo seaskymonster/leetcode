@@ -33,8 +33,8 @@ public class Solution {
         ListNode tail = dummy;
         while(!heap.isEmpty()){
             ListNode head = heap.poll();
-            tail.next = head;
-            tail = head;
+            tail.next = head; 
+            tail = head; //要移动 tail 指针
             if (head.next != null) {
                 heap.add(head.next);
             }
