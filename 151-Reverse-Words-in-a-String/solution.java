@@ -5,7 +5,7 @@ public class Solution {
         }
         String[] sa = s.split(" ");
         StringBuilder sb = new StringBuilder();
-        for(int i = s.length -1 ; i >= 0 ; i--){
+        for(int i = s.length() -1 ; i >= 0 ; i--){
             sb = sb + reverse(sa[i]) + " ";
         }
         return sb.substring(0, sb.length()-1);
