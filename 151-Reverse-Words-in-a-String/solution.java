@@ -7,9 +7,10 @@ public class Solution {
     
         StringBuilder sb = new StringBuilder();
         for(int i = sa.length -1 ; i >= 0 ; i--){
-              if(!sa[i].equals("")){
+            if(!sa[i].equals("")){
                   sb = sb.append(sa[i]).append(" ");
-              }
+            }
+              
         }
         return sb.length() == 0 ? "": sb.substring(0, sb.length()-1);
     }
