@@ -8,7 +8,7 @@ public class Solution {
         for(int i = s.length() -1 ; i >= 0 ; i--){
             sb = sb.append(sa[i]).append(" ");
         }
-        return sb.substring(0, sb.length()-1);
+        return sb.length() == 0 ? "": sb.substring(0, sb.length()-1);
     }
     
     // public String reverse(String s) {
