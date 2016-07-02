@@ -20,6 +20,8 @@ public class Solution {
         while(p1 != null && p2 != null){
             if(p1.val != p2.val){
                 return false;
+            }else{
+                break;
             }
         }
         return p2 == null;
