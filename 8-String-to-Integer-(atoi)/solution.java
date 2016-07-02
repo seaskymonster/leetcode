@@ -9,7 +9,7 @@ public class Solution {
         if(str.charAt(0) == '+'){
             sign = 1;
             index++;
-        }else if(str.charAt(0) == '-'){
+        }else if(str.charAt(0) == '-'){  // 要看第一个符号是不是正数还是负数还是没有符号。  从第一个非符号位开始。
             sign = -1;
             index++;
         }
@@ -21,7 +21,7 @@ public class Solution {
             }else{
                 break;
             }
-            if(val > Integer.MAX_VALUE){
+            if(val > Integer.MAX_VALUE){ // 考虑最大值跳出
                 break;
             }
         }
