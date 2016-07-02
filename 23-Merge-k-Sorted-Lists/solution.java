@@ -7,14 +7,17 @@
  * }
  */
 public class Solution {
-    private Comparator<ListNode> ListNodeComparator = new Comparator<ListNode>(){
+    private Comparator<ListNode> ListNodeComparator = new Comparator<ListNode>(){ // implement 一个comparator，然后重写compare函数
         public int compare(ListNode left, ListNode right){
             if(left == null){
                 return 1;
             }else if(right == null){
-                return -1;
+                return -1;// -1 代表左边比右边小，所以给左边的node
             }
             return left.val - right.val;
+            
+            
+            // 在compare里面， -1代表 left<right;   +1 代表 left>right
         }
     };
     public ListNode mergeKLists(ListNode[] lists) {
