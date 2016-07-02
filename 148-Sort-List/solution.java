@@ -12,7 +12,7 @@ public class Solution {
             return head;
         }
         ListNode mid = findMidNode(head);
-        ListNode right = sortList(mid+1);
+        ListNode right = sortList(mid.next);
         mid.next = null;
         ListNode left = sortList(head);
         return merge(left, right);
