@@ -18,26 +18,27 @@
 public class Solution {
     public int depthSum(List<NestedInteger> nestedList) {
         int sum = 0;
-        for(int i = 0; i < nestedList.length; i++){
+        for(int i = 0; i < nestedList.size(); i++){
             if(nestedList.get(i).isInteger()){
                 sum += nestedList.get(i).getInteger();
             }else{
                 List<NestedInteger> list = nestedList.get(i).getList();
-                sum += depthSum(list, 1);
+                sum += depthSum(list, 2);
             }
         }
+        return sum;
     }
     
-    public int depthSum(List<NestedInteger> nestedList, depth){
+    public int depthSum(List<NestedInteger> nestedList, int depth){
         int sum = 0;
-        for(int i = 0; i < nestedList.length; i++){
+        for(int i = 0; i < nestedList.size(); i++){
             if(nestedList.get(i).isInteger()){
                 sum += nestedList.get(i).getInteger() * depth;
             }else{
                 List<NestedInteger> list = nestedList.get(i).getList();
-                sum += depthSum(list, depth++);
+                sum += depthSum(list, depth+1);
             }
         }
-        
+        return sum;
     }
 }
