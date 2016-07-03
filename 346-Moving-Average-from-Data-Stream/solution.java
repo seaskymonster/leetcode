@@ -5,7 +5,7 @@ public class MovingAverage {
     /** Initialize your data structure here. */
     public MovingAverage(int size) {
         sum = 0;
-        maxSize = 0;
+        maxSize = size;
         q = new LinkedList<Integer>();
     }
     
