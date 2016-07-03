@@ -5,7 +5,7 @@ public class Solution {
       }
       HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
       for(int i = 0; i < nums.length; i++){
-          if(map.contains(nums[i]){
+          if(map.contains(nums[i])){
               if(i - map.get(nums[i]) <= k){
                   return true;
               }
