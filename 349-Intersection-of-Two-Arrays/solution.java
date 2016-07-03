@@ -11,7 +11,7 @@ public class Solution {
         }
         
         for(int j = 0; j < nums2.length; j++){
-            if(set.contains(nums2[j])){
+            if(set.contains(nums2[j]) && !result.contains(nums2[j])){ // set 里面加入重复的也没事
                 result.add(nums2[j]);
             }
         }
