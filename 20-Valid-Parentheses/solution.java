@@ -11,6 +11,9 @@ public class Solution {
             if(s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{'){
                 stack.push(s.charAt(i));
             }else{
+                if(stack.isEmpty()){
+                    return false;
+                }
                 Character cur = stack.pop();
                 Character c = map.get(s.charAt(i));
                 if(cur != c){
