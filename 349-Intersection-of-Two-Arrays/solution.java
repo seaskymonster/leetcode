@@ -11,7 +11,7 @@ public class Solution {
         }
         
         for(int j = 0; j < nums2.length; j++){
-            if(set.contains(nums2[j]) && !result.contains(nums2[j])){
+            if(set.contains(nums2[j])){
                 result.add(nums2[j]);
             }
         }
