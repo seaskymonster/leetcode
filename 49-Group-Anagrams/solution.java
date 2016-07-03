@@ -4,8 +4,8 @@ public class Solution {
         for(String s: strs){
             char[] array = s.toCharArray();
             Arrays.sort(array);
-            String sc = array.toString();
-            if(map.contains(sc)){
+            String sc = String.valueOf(array);;
+            if(map.containsKey(sc)){
                 List<String> list = map.get(sc);
                 list.add(s);
                 map.put(sc, list);
