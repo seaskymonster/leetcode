@@ -1,18 +1,22 @@
 public class MovingAverage {
-    int[] array;
-    int index;
+    double sum;
+    private int maxSize;
+    Queue<Integer> q;
     /** Initialize your data structure here. */
     public MovingAverage(int size) {
-        array = new int[size];
-        index = 0;
+        sum = 0;
+        maxSize = 0;
+        q = new LinkedList<Integer>();
     }
     
     public double next(int val) {
-        for(int i = 0; i <= index; i++){
-            int sum = 0;
-            sum = sum +  array[index];
+        if (q.size() == maxSize) {
+            sum -= q.remove();
         }
-        return (sum+array[++index])/(index+1);
+    
+        sum += val;
+        q.add(val);
+        return sum / q.size();
     }
 }
 
