@@ -12,7 +12,7 @@ public class Solution {
                 stack.push(s.charAt(i));
             }else{
                 if(stack.isEmpty()){
-                    return false;
+                    return false; //这个很重要，很可能反向的符号更多一些。
                 }
                 Character cur = stack.pop();
                 Character c = map.get(s.charAt(i));
