@@ -9,7 +9,7 @@ public class MovingAverage {
     
     public double next(int val) {
         for(int i = 0; i <= index; i++){
-            sum += array[index];
+            int sum += array[index];
         }
         return (sum+array[++index])/(index+1);
     }
