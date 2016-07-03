@@ -11,13 +11,13 @@ public class Solution {
         }
         
         for(int j = 0; j < nums2.length; j++){
-            if(set.contains(nums[j]){
-                result.add(nums[j]);
+            if(set.contains(nums2[j]) && !result.contains(nums2[j])){
+                result.add(nums2[j]);
             }
         }
-        int[] intersection = new int[set.size()];
+        int[] intersection = new int[result.size()];
         int index = 0;
-        for(Integer val : set){
+        for(Integer val : result){
             intersection[index] = val;
             index++;
         }
