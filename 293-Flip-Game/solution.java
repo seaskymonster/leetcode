@@ -11,7 +11,6 @@ public class Solution {
                 if(array[i] == '+'){
                    array[i-1] = array[i] = '-';
                    result.add(String.valueOf(array));
-
                 }
             }
         }
