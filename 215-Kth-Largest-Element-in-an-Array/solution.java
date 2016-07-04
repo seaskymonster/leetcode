@@ -29,7 +29,7 @@ public class Solution {
 			}
 		}
 		
-		int m = j+1 - left + 1;
+		int m = j - left + 1;
 		if(m == k) return j;
 		if(m > k){
 		    return partition(nums, left, j, k);
