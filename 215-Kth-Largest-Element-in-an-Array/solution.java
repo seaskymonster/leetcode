@@ -7,7 +7,7 @@ public class Solution {
     
     
     private int partition(int[] nums, int left, int right, int k){
-        if(left >= right) return;
+        if(left >= right) return left;
         int middle = left + (right-left)/2;
         int pivot = nums[middle];
         int i = left; 
