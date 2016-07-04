@@ -27,7 +27,7 @@ public class Solution {
         //     }
         // }
         
-        while(pt1 <= pt2){
+        while(pt1 <= pt2){  //这里一定要 pt1 <= pt2, 因为这样会检查一下，pt1到pt2时，跟pt0是否要交换。
             if(nums[pt1] == 0){
                 if(pt0 == pt1){
                     pt0++;
