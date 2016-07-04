@@ -11,16 +11,16 @@ public class Solution {
         int pivot = nums[middle];
         int i = left; 
         int j = right;
-        while (i < j) {
-			while (i < j && nums[i] < pivot) {
+        while (i <= j) {
+			while (i <= j && nums[i] < pivot) {
 				i++;
 			}
  
-			while (i < j && nums[j] > pivot) {
+			while (i <= j && nums[j] > pivot) {
 				j--;
 			}
  
-			if (i < j) {
+			if (i <= j) {
 				int temp = nums[i];
 				nums[i] = nums[j];
 				nums[j] = temp;
@@ -29,12 +29,12 @@ public class Solution {
 			}
 		}
 		
-		int m = i - left + 1;
-		if(m == k) return i;
+		int m = j - left + 1;
+		if(m == k) return j;
 		if(m > k){
-		    return partition(nums, left, i-1, k-m);
+		    return partition(nums, left, j-1, k);
 		}else{
-		    return partition(nums, i+1, right, k); // k -m 中的m是找左边有m个已经被去除。
+		    return partition(nums, j+1, right, k-m); // k -m 中的m是找左边有m个已经被去除。
 		}
     }
 }
