@@ -38,10 +38,10 @@ public class Solution {
         }
         if(board[i][j] == 'O'){
             board[i][j] = '*';
-            if(i-1>=0) dfs(board, i-1, j);
+            if(i-1>0) dfs(board, i-1, j);
             if(i+1< board.length)dfs(board, i+1, j);
-            if(j-1>=0)dfs(board, i, j-1);
-             if(i+1< board[0].length)dfs(board, i, j+1);
+            if(j-1>0)dfs(board, i, j-1);
+            if(i+1< board[0].length)dfs(board, i, j+1);
         }
         
     }
