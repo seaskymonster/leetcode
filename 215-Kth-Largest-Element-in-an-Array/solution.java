@@ -29,12 +29,12 @@ public class Solution {
 			}
 		}
 		
-		int m = j - left + 1;
+		int m = j+1 - left + 1;
 		if(m == k) return j;
 		if(m > k){
-		    return partition(nums, left, j-1, k);
+		    return partition(nums, left, j, k);
 		}else{
-		    return partition(nums, j+1, right, k-m); // k -m 中的m是找左边有m个已经被去除。
+		    return partition(nums, i, right, k-m); // k -m 中的m是找左边有m个已经被去除。
 		}
     }
 }
