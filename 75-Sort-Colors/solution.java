@@ -27,7 +27,7 @@ public class Solution {
         //     }
         // }
         
-        while(pt1 < pt2){
+        while(pt1 <= pt2){
             if(nums[pt1] == 0){
                 if(pt0 == pt1){
                     pt0++;
@@ -37,7 +37,7 @@ public class Solution {
                    pt0++;
                    pt1++;
                 }
-            }else if(nums[i] == 1){
+            }else if(nums[pt1] == 1){
                 pt1++;
             }else{
                 swap(nums, pt1, pt2);
