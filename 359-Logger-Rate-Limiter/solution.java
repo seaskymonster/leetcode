@@ -12,9 +12,9 @@ public class Logger {
         if(map.containsKey(message)){
             int lasttimestamp = map.get(message);
             if(timestamp - lasttimestamp < 10){
-                return false;
+                return false; // 如果return false， 就不用往map里面存，因为不用log
             }else{
-                map.put(message, timestamp);
+                map.put(message, timestamp); 
             }
         }else{
             map.put(message, timestamp);
