@@ -13,7 +13,7 @@ public class Solution {
         }
     }
     
-    public void swap(int[] nums, int left, int end){
+    public void swap(int[] nums, int start, int end){
         int tmp = nums[end];
         nums[end] = nums[start];
         nums[start] = tmp;
