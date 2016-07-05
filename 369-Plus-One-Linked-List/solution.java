@@ -11,7 +11,7 @@ public class Solution {
         if(head == null) return null;
         ListNode tail = reverse(head);
         ListNode cur = tail;
-        ListNode pre = null;
+        ListNode pre = null;  // 这里多加一个pre 指针。
         int carry = 0;
         while(cur != null){
             int value = cur.val;
