@@ -7,7 +7,6 @@ public class Solution {
            }else{
                 nums[pt] = nums[i];
                 pt++;
-               }
            }
        }
        return pt;
