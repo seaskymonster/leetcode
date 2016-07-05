@@ -11,16 +11,18 @@ public class Solution {
         if(head == null) return null;
         ListNode tail = reverse(head);
         ListNode cur = tail;
+        ListNode pre = null;
         int carry = 0;
         while(cur != null){
             int value = cur.val;
             cur.val = (value +1) % 10;
             carry = (value + 1)/10;
+            pre = cur;
             cur = cur.next;
             if(carry == 0) break;
         }
         if(carry == 1){
-            cur.next = new ListNode(1);
+            pre.next = new ListNode(1);
         }
         return reverse(tail);
         
