@@ -28,7 +28,7 @@ public class Solution {
        int p = nums1.length-1;
        
        while(p1 >= 0 && p2 >= 0){
-           if(nums1[p1] > nums[p2]){
+           if(nums1[p1] > nums2[p2]){
                nums1[p--] = nums1[p1--];
            }else{
                nums1[p--] = nums2[p2--];
