@@ -5,12 +5,8 @@ public class Solution {
            if(nums[i] == val){
                continue;
            }else{
-               if(pt == i){
-                   pt++;
-               }else{
-                  nums[pt] = nums[i];
-                  nums[i] = val;
-                  pt++;
+                nums[pt] = nums[i];
+                pt++;
                }
            }
        }
