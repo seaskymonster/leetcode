@@ -22,9 +22,9 @@ public class Solution {
             cur = stack.peek();
             stack.pop();
             result.add(cur.val);
-            if(cur.right != null){
+            // if(cur.right != null){
                 cur = cur.right;
-            }
+            
         }
         return result;
     }
