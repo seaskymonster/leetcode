@@ -8,6 +8,6 @@ public class Solution {
                 f[i] += f[j] * f[i-1-j];
             }
         }
-        return f[n]
+        return f[n];
     }
 }
