@@ -14,7 +14,7 @@ public class Solution {
         if(root == null) return result;
         TreeNode cur = root;
 
-        while(!stack.empty() || cur != null){
+        while(!stack.empty() || cur != null){ // 这里一定加 || cur != null, 说明当前节点还没遍历完。即使现在stack是空的，我还有当前节点的自己点可以往stack 里面放。
             while(cur != null){
                 stack.add(cur);
                 cur = cur.left;
@@ -22,7 +22,7 @@ public class Solution {
             cur = stack.peek();
             stack.pop();
             result.add(cur.val);
-            // if(cur.right != null){
+            // if(cur.right != null){ // 没想明白为啥不能加这句。
                 cur = cur.right;
             
         }
