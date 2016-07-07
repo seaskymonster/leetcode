@@ -3,7 +3,7 @@ public class Solution {
         Arrays.sort(candidates);
         int pos = 0;
         List<List<Integer>> result = new ArrayList<>();
-        List<Integer> path;
+        List<Integer> path = new ArrayList<>();
         helper(result, path, pos, target, candidates);
         return result;
     }
