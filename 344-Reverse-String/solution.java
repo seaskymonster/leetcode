@@ -12,6 +12,8 @@ public class Solution {
           j--;
        }
        
-       return String.valueOf(r);
+    //   return String.valueOf(r); 
+         return new String(r);
+    //   return r.toString(); this does not work.
     }
 }
