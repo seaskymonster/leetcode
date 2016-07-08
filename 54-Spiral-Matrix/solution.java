@@ -61,7 +61,7 @@ public class Solution {
             result.add(matrix[count][j]);
         }
         for(int i = count+1; i < m-count; i++){
-            result.add(matrix[i][n-1-j]);
+            result.add(matrix[i][n-1-i]);
         }
         if(m - 2*count == 1 || n - 2*count == 1) break; // 只剩一行或者一列，下半部分操作不用了。
         for(int j = n-1-count-1; j >= count; j--){
