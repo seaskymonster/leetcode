@@ -54,6 +54,8 @@ public class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> result=new ArrayList<Integer>();
         int count = 0;
+        int m = matrix.length;
+        int n = matrix[0].length;
         while(m - 2*count > 0 && n - 2*count > 0){
         for(int j = count ; j < n-count; j++){
             result.add(matrix[count][j]);
