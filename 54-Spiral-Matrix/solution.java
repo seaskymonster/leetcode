@@ -53,6 +53,9 @@ public class Solution {
     
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> result=new ArrayList<Integer>();
+        if(matrix == null || matrix.length == 0){
+            return result;
+        }
         int count = 0;
         int m = matrix.length;
         int n = matrix[0].length;
