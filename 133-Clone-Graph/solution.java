@@ -43,7 +43,7 @@ public class Solution {
             }
         }
         
-        return map.get(node);
+        return copynode;
         
     }
 }
