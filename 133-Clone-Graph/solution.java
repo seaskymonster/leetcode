@@ -10,7 +10,7 @@ public class Solution {
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         Queue<UndirectedGraphNode> q = new LinkedList<>();
         HashMap<UndirectedGraphNode,UndirectedGraphNode> map = new HashMap<>();
-        UndirectedGrapthNode copynode = new UndirectedGraphNode(node.label);
+        UndirectedGraphNode copynode = new UndirectedGraphNode(node.label);
         map.put(node, copynode);
         q.offer(node);
         
@@ -18,7 +18,7 @@ public class Solution {
             UndirectedGrapthNode cur = q.poll();
             if(!map.containsKey(cur)){
                 for(UndirectedGrapthNode nb : cur.neighbors){
-                     UndirectedGrapthNode copynb = new UndirectedGraphNode(nb.label);
+                     UndirectedGraphNode copynb = new UndirectedGraphNode(nb.label);
                      map.put(nb, copynb);
                      q.offer(nb);
                 }
