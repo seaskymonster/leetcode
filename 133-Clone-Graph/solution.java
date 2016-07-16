@@ -27,14 +27,19 @@ public class Solution {
         }
         
         q.offer(node);
+        HashSet<UndirectedGraphNode> set = new HashSet<UndirectedGraphNode>();
+        set.put(node);
          while(!q.isEmpty()){
             UndirectedGraphNode cur = q.poll();
             UndirectedGraphNode copycur = map.get(cur);
+            if(!set.contains(cur)){
             copycur.neighbors = new ArrayList<UndirectedGraphNode>();
             for(UndirectedGraphNode nb : cur.neighbors){
                 copycur.neighbors.add(map.get(nb));
                 q.offer(nb);
+                set.put(nb);
              }
+            }
         }
         
         return map.get(node);
