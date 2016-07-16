@@ -9,7 +9,7 @@
 public class Solution {
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         Queue<UndirectedGraphNode> q = new LinkedList<>();
-        HashMap<UndirectedGraphNode> map = new HashMap<>();
+        HashMap<UndirectedGraphNode,UndirectedGraphNode> map = new HashMap<>();
         UndirectedGrapthNode copynode = new UndirectedGraphNode(node.label);
         map.put(node, copynode);
         q.offer(node);
