@@ -35,10 +35,11 @@ public class Solution {
             
             for(UndirectedGraphNode nb : cur.neighbors){
                 if(!set.contains(nb)){
-                   copycur.neighbors.add(map.get(nb));
                    q.offer(nb);
                    set.add(nb);
                 }
+                copycur.neighbors.add(map.get(nb));
+
             }
         }
         
