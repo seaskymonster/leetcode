@@ -37,7 +37,7 @@ public class Solution {
             for(UndirectedGraphNode nb : cur.neighbors){
                 copycur.neighbors.add(map.get(nb));
                 q.offer(nb);
-                set.put(nb);
+                set.add(nb);
              }
             }
         }
