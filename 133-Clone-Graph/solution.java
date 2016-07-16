@@ -15,9 +15,9 @@ public class Solution {
         q.offer(node);
         
         while(!q.isEmpty()){
-            UndirectedGrapthNode cur = q.poll();
+            UndirectedGraphNode cur = q.poll();
             if(!map.containsKey(cur)){
-                for(UndirectedGrapthNode nb : cur.neighbors){
+                for(UndirectedGraphNode nb : cur.neighbors){
                      UndirectedGraphNode copynb = new UndirectedGraphNode(nb.label);
                      map.put(nb, copynb);
                      q.offer(nb);
@@ -27,10 +27,10 @@ public class Solution {
         
         q.offer(node);
          while(!q.isEmpty()){
-            UndirectedGrapthNode cur = q.poll();
-            UndirectedGrapthNode copycur = map.get(cur);
+            UndirectedGraphNode cur = q.poll();
+            UndirectedGraphNode copycur = map.get(cur);
             copycur.neighbors = new ArrayList<UndirectedGraphNode>();
-            for(UndirectedGrapthNode nb : cur.neighbors){
+            for(UndirectedGraphNode nb : cur.neighbors){
                 copycur.neighbors.add(map.get(nb));
                 q.offer(nb);
              }
