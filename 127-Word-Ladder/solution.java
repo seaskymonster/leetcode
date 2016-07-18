@@ -5,7 +5,7 @@ public class Solution {
         HashSet<String> set = new HashSet<String>();
         q.offer(beginWord);
         set.add(beginWord);
-        int lenght = 1;
+        int length = 1;
         
         while(!q.isEmpty()){
             length++;
