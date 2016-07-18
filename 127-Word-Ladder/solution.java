@@ -1,7 +1,7 @@
 public class Solution {
     public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
         if(wordList == null) return 0;
-        Queue<String> q = new ArrayList<String>();
+        Queue<String> q = new LinkedList<String>();
         HashSet<String> set = new HashSet<String>();
         q.offer(beginWord);
         set.add(beginWord);
