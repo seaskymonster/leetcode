@@ -35,7 +35,7 @@ public class Solution {
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
        TreeNode cur = root;
        TreeNode successor = null;
-       while(cur != null || cur.val == p.val){
+       while(cur != null || cur.val != p.val){
            if(cur.val > p.val){
                successor = cur;
                cur = cur.left;
