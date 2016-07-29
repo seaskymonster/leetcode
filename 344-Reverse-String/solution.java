@@ -1,19 +1,10 @@
 public class Solution {
     public String reverseString(String s) {
-        char tmp;
-        char[] r = s.toCharArray();
-        int i =0;
-        int j = s.length()-1;
-       while(i< s.length()/2){
-          tmp = r[i];
-          r[i] = r[j];
-          r[j] = tmp;
-          i++;
-          j--;
-       }
-       
-    //   return String.valueOf(r); 
-         return new String(r);
-    //   return r.toString(); this does not work.
+        char[] ca = s.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for(int i = ca.length-1; i >= 0; i--){
+            sb.append(ca[i]);
+        }
+        return new String(sb);
     }
 }
