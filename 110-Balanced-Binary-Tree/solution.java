@@ -15,7 +15,7 @@ public class Solution {
         return height(root) != -1;
     }
     
-    public int height(TreeNode root){
+    public int height(TreeNode root){ // 其实也是从下往上返回。。
         if(root == null){
             return 0;
         }
