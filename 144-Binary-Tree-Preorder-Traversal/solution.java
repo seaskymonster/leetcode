@@ -27,12 +27,12 @@ public class Solution {
         List<Integer> result = new ArrayList<>();
         if(root == null) return result;
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        stack.add(root);
+        stack.push(root);
         while(!stack.isEmpty()){
             TreeNode node = stack.pop();
             result.add(node.val);
-            stack.add(root.right);
-            stack.add(root.left);
+            stack.push(root.right);
+            stack.push(root.left);
         }
         return result;
     }
