@@ -22,7 +22,7 @@ public class Solution {
             if(k == 0){
                 return node.val;
             }
-            cur = cur.right;
+            cur = node.right;
         }
         return -1;
     }
