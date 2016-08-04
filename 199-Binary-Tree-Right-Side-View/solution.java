@@ -14,7 +14,7 @@ public class Solution {
         return result;
     }
     
-    public void helper(List<Integer> result, TreeNode root, depth){
+    public void helper(List<Integer> result, TreeNode root, int depth){
         if(root == null) return;
         if(result.size() == depth){
             result.add(root.val);
