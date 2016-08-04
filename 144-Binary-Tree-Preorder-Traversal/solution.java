@@ -31,11 +31,11 @@ public class Solution {
         while(!stack.isEmpty()){
             TreeNode node = stack.pop();
             result.add(node.val);
-            if(root.right != null){
-               stack.push(root.right);
+            if(node.right != null){ // 这个条件是必须的。。。 不能将空的加入到stack里面去
+               stack.push(node.right);
             }
-            if(root.left != null){
-               stack.push(root.left);
+            if(node.left != null){
+               stack.push(node.left);
             }
         }
         return result;
