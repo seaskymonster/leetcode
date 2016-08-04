@@ -17,11 +17,10 @@ public class Solution {
     
     public TreeNode helper(int[] inorder, int[] postorder, int ileft, int iright, int pleft, int pright){
         if(ileft > iright || pleft >pright) return null;
-        int ibreak = findIndex(inorder, postorder[pright-1], ileft, iright);
-        int pbreak = findIndex(postorder, inorder[ileft+1], pleft, pright);
+        int position = findIndex(inorder, postorder[pright], ileft, iright);
         TreeNode root = new TreeNode(inorder[ileft]);
-        TreeNode left = helper(inorder, postorder, ileft + 1, ibreak-1, pleft, pbreak);
-        TreeNode right = helper(inorder, postorder, ibreak, iright, pbreak+1, pright-1);
+        TreeNode left = helper(inorder, postorder, ileft, position-1, pleft, position-ileft + pleft -1 ;
+        TreeNode right = helper(inorder, postorder, position + 1, iright, pright - (iright - position), pright-1);
         root.left = left;
         root.right = right;
         return root;
