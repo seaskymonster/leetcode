@@ -11,7 +11,7 @@ public class Solution {
     public int countNodes(TreeNode root) {
        if(root == null) return 0;
        int left = getLeft(root, 1);
-       int right = getRight(root, 1);
+       int right = getRight(root);
        if(left == right){
            return (1 << left) -1;
        }else{
@@ -19,8 +19,9 @@ public class Solution {
        }
     }
     
-    public int getLeft(TreeNode root, int depth){
-        while(root.left != null){
+    public int getLeft(TreeNode root){
+        int depth = 0;
+        while(root != null){
             depth ++;
             root = root.left;
         }
@@ -28,8 +29,9 @@ public class Solution {
     }
     
       
-    public int getRight(TreeNode root, int depth){
-        while(root.right != null){
+    public int getRight(TreeNode root){
+        int depth = 0;
+        while(root != null){
             depth ++;
             root = root.right;
         }
