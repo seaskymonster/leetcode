@@ -5,16 +5,16 @@ public class Solution {
     }
     
     public boolean helper(int start, int end, int[] preorder){
-        if(start + 1 <= end) return true;
-        int position = Math.MAX_VALUE;
+        if(end - start + 1 <= 2 ) return true;
+        int position = Integer.MAX_VALUE;
         for(int i = start + 1; i <= end; i++){
             if(preorder[i] > preorder[start]){
                 position = i;
                 break;
             }
         }
-        if(position == Math.MAX_VALUE){
-            return true;
+        if(position == Integer.MAX_VALUE){
+            position = end +1;
         }
         
         for(int j = position; j <= end; j++){
