@@ -7,7 +7,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class Solution {
+public class Solution { // 可以用往下traversal 或者divide and conquer 两种方法做。
     private int max = 0;
     public int maxDepth(TreeNode root) {
         if(root == null) return 0;
