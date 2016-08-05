@@ -9,19 +9,34 @@
  */
 public class Solution {
     public int countNodes(TreeNode root) {
-        List<TreeNode> lastlevel = new ArrayList<TreeNode>();
-        int height = helper(root, lastlevel)
-        return 2^height -1 + lastlevel.size();
+       if(root == null) return 0;
+       int left = getLeft(root, 1);
+       int right = getRight(root, 1);
+       if(left == right){
+           return (1 << left) -1;
+       }else{
+          return 1 + counNodes(root.left) + countNodes(root.right);
+       }
     }
     
-    public int helper(TreeNode root, List<TreeNode> lastlevel){
-        if(root == null) return -1;
-        if(root.left == null && root.right == null){
-            lastlevel.add(root);
-            return 1;
+    public int getLeft(TreeNode root, int depth){
+        while(root.left != null){
+            depth ++;
+            root = root.left;
         }
-        int left = helper(root.left, lastlevel);
-        int right = helper(root.right, lastlevel);
-        return Math.max(left, right) + 1;
+        return depth;
     }
+    
+      
+    public int getRight(TreeNode root, int depth){
+        while(root.right != null){
+            depth ++;
+            root = root.right;
+        }
+        return depth;
+    }
+    
+    
+    
+
 }
