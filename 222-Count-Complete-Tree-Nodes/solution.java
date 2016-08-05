@@ -10,7 +10,7 @@
 public class Solution {
     public int countNodes(TreeNode root) {
        if(root == null) return 0;
-       int left = getLeft(root, 1);
+       int left = getLeft(root);
        int right = getRight(root);
        if(left == right){
            return (1 << left) -1;
