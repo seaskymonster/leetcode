@@ -11,7 +11,7 @@ public class Solution {
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode cur = root;
-        boolen alreadyfind = false;
+        boolean alreadyfind = false;
         while(!stack.isEmpty() || cur != null){
             while(cur != null){
                 stack.push(cur);
