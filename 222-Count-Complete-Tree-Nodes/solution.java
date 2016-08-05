@@ -15,7 +15,7 @@ public class Solution {
        if(left == right){
            return (1 << left) -1;
        }else{
-          return 1 + counNodes(root.left) + countNodes(root.right);
+          return 1 + countNodes(root.left) + countNodes(root.right);
        }
     }
     
