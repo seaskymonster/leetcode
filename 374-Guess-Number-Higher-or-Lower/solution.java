@@ -4,7 +4,7 @@
       int guess(int num); */
 
 public class Solution extends GuessGame {
-    public int guessNumber(int n) {
+    public int guessNumber(int n) { // 把 binary search 写成了 recursion的方式，不太好。。。 以后改成 iteration的形式吧。
        return helper(1, n);
     }
     
