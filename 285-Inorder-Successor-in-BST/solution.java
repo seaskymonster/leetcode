@@ -25,7 +25,7 @@ public class Solution {
                    alreadyfind = true; 
                 }
             }
-            cur = cur.right;
+            cur = node.right;
         }
         return null;
     }
