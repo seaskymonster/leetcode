@@ -50,7 +50,7 @@ public class Trie {
          TrieNode cur = root;
         for(int i = 0; i < prefix.length(); i++){
             Character tmp = prefix.charAt(i);
-            if(cur.children[prefix - 'a'] == null){
+            if(cur.children[tmp - 'a'] == null){
               return false;
             }else{
              cur = cur.children[tmp - 'a'];
