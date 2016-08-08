@@ -1,6 +1,6 @@
 class TrieNode {
     // Initialize your data structure here.
-    private TrieNode[] children;
+    public TrieNode[] children;
     public boolean hasWord;
     
     public TrieNode() {
@@ -10,7 +10,7 @@ class TrieNode {
 }
 
 public class Trie {
-    private TrieNode root;
+    public TrieNode root;
 
     public Trie() {
         root = new TrieNode();
