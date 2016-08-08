@@ -35,7 +35,7 @@ public class Trie {
         for(int i = 0; i < word.length(); i++){
             Character tmp = word.charAt(i);
             if(cur.children[tmp - 'a'] == null){
-              return null;
+              return false;
             }else{
              cur = cur.children[tmp - 'a'];
             }
@@ -49,9 +49,9 @@ public class Trie {
     public boolean startsWith(String prefix) {
          TrieNode cur = root;
         for(int i = 0; i < prefix.length(); i++){
-            Character tmp = word.charAt(i);
+            Character tmp = prefix.charAt(i);
             if(cur.children[prefix - 'a'] == null){
-              return null;
+              return false;
             }else{
              cur = cur.children[tmp - 'a'];
             }
