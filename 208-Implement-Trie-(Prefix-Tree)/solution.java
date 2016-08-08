@@ -26,7 +26,7 @@ public class Trie {
                 cur = cur.children[tmp - 'a'];
             }
         }
-        cur.hasWrod = true;
+        cur.hasWord = true;
     }
 
     // Returns if the word is in the trie.
@@ -50,7 +50,7 @@ public class Trie {
          TrieNode cur = root;
         for(int i = 0; i < prefix.length(); i++){
             Character tmp = word.charAt(i);
-            if(cur.children[tmp - 'a'] == null){
+            if(cur.children[prefix - 'a'] == null){
               return null;
             }else{
              cur = cur.children[tmp - 'a'];
