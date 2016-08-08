@@ -23,8 +23,9 @@ public class Trie {
             Character tmp = word.charAt(i);
             if(cur.children[tmp - 'a'] == null){
                 cur.children[tmp - 'a'] = new TrieNode();
-                cur = cur.children[tmp - 'a'];
             }
+             cur = cur.children[tmp - 'a'];
+
         }
         cur.hasWord = true;
     }
@@ -37,7 +38,7 @@ public class Trie {
             if(cur.children[tmp - 'a'] == null){
               return false;
             }else{
-             cur = cur.children[tmp - 'a'];
+             cur = cur.children[tmp - 'a']; // 这行容易错。
             }
         }
         return cur.hasWord;
