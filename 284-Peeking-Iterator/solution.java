@@ -1,7 +1,7 @@
 // Java Iterator interface reference:
 // https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
 class PeekingIterator implements Iterator<Integer> {
-    private int peek;
+    private Integer peek;
     private Iterator<Integer> iter;
 
 
@@ -20,7 +20,7 @@ class PeekingIterator implements Iterator<Integer> {
 	// Override them if needed.
 	@Override
 	public Integer next() {
-	  int result = peek;
+	  Integer result = peek;
 	  peek = iter.hasNext() ? iter.next() : null;
 	  return rsult;
 	}
