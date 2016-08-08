@@ -19,7 +19,7 @@ public class Trie {
     // Inserts a word into the trie.
     public void insert(String word) {
         TrieNode cur = root;
-        for(int i = 0; i < word.length; i++){
+        for(int i = 0; i < word.length(); i++){
             Character tmp = word.charAt(i);
             if(cur.children[tmp - 'a'] == null){
                 cur.children[tmp - 'a'] = new TrieNode();
@@ -32,7 +32,7 @@ public class Trie {
     // Returns if the word is in the trie.
     public boolean search(String word) {
         TrieNode cur = root;
-        for(int i = 0; i < word.length; i++){
+        for(int i = 0; i < word.length(); i++){
             Character tmp = word.charAt(i);
             if(cur.children[tmp - 'a'] == null){
               return null;
@@ -48,7 +48,7 @@ public class Trie {
     // that starts with the given prefix.
     public boolean startsWith(String prefix) {
          TrieNode cur = root;
-        for(int i = 0; i < prefix.length; i++){
+        for(int i = 0; i < prefix.length(); i++){
             Character tmp = word.charAt(i);
             if(cur.children[tmp - 'a'] == null){
               return null;
