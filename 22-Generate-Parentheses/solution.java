@@ -5,7 +5,7 @@ public class Solution {
         return result;
     }
     
-    public helper(List<String> result, String s, int left, int right){
+    public void helper(List<String> result, String s, int left, int right){
         if(left > right) return;
         if(left == 0 && right == 0){
             result.add(s);
