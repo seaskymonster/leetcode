@@ -3,23 +3,36 @@ public class Solution {
         return n*x + y;
     }
     public int numIslands(char[][] grid) {
+        if(grid == null || grid.length  == 0 || grid[0].length == 0){
+            return 0;
+        }
+        int count = 0;
         int m = grid.length;
         int n = grid[0].length;
         UF uf = new UF(m, n);
-        int count = 0;
         for(int i =0 ; i < m; i++){
             for(int j = 0; j < n; j++){
                 if(grid[i][j] == '0'){
                     continue;
                 }else{
+                   count++;
                    if(i > 0 && grid[i-1][j] == '1'){
-                       uf.union(convertToId(i, j, n), convertToId(i-1, j, n));
-                   }else if(j > 0 && grid[i][j-1] == '1'){
-                       uf.union(convertToId(i, j, n), convertToId(i, j-1, n));
-                   }else{
-                       count++;
+                       if(uf.compressed_find (i, j, n) == uf.compressed_find(i-1, j, n)){
+                           continue;
+                       }else{
+                          count--;
+                          uf.union(convertToId(i, j, n), convertToId(i-1, j, n));
+                       }
                    }
                    
+                   if(j > 0 && grid[i][j-1] == '1'){
+                       if(uf.compressed_find (i, j, n) == uf.compressed_find(i, j-1, n)){
+                           continue;
+                       }else{
+                           count--;
+                           uf.union(convertToId(i, j, n), convertToId(i, j-1, n));
+                       }
+                   }
                 }
             }
         }
@@ -28,7 +41,7 @@ public class Solution {
     
     class UF{
         HashMap<Integer, Integer> father = new HashMap<Integer, Integer>();
-        
+
         UF(int m, int n){
            for(int i = 0; i < m; i++){
                for(int j = 0; j < n; j++){
