@@ -10,38 +10,31 @@ public class Solution {
              int y = p[1];
              grid[x][y] = 1;
              if(x > 0 && grid[x -1][y] == 1){ // check the upper element
-                 if(uf.find(convertToId(x, y, n)) == uf.find(convertToId(x-1, y, n))){
-                     continue;
-                 }else{
+                 if(uf.find(convertToId(x, y, n)) != uf.find(convertToId(x-1, y, n))){
                      count--;
                      uf.union(convertToId(x, y, n), convertToId(x-1, y, n));
                  }
              }
              
              if(x < m-1 && grid[x+1][y] == 1){ // check the bottom element
-                   if(uf.find(convertToId(x, y, n)) == uf.find(convertToId(x+1, y, n))){
-                     continue;
-                 }else{
+                   if(uf.find(convertToId(x, y, n)) != uf.find(convertToId(x+1, y, n))){
                      count--;
                      uf.union(convertToId(x, y, n), convertToId(x+1, y, n));
                  } 
              }
              
              if(y > 0 && grid[x][y -1] == 1) { // check the left element
-                 if(uf.find(convertToId(x, y, n)) == uf.find(convertToId(x, y-1, n))){
-                     continue;
-                 }else{
+                 if(uf.find(convertToId(x, y, n)) != uf.find(convertToId(x, y-1, n))){
                      count--;
                      uf.union(convertToId(x, y, n), convertToId(x, y-1, n));
                  }
              }
              
              if(y < n-1 && grid[x][y + 1] == 1) { // check the right element
-                 if(uf.find(convertToId(x, y, n)) == uf.find(convertToId(x, y+1, n))){
-                     continue;
-                 }else{
+                 if(uf.find(convertToId(x, y, n)) != uf.find(convertToId(x, y+1, n))){
                      count--;
                      uf.union(convertToId(x, y, n), convertToId(x, y+1, n));
+                 }
               }
              
              result.add(count);
