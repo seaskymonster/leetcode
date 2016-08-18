@@ -4,24 +4,46 @@ public class Solution {
          int count = 0;
          List<Integer> result = new ArrayList<Integer>();
          UF uf = new UF(m,n);
-         for(int[] p, positions){
+         for(int[] p : positions){
              count++;
-             if(p[0] > 0 && grid[p[0] -1][p[1]] == 1){
-                 if(uf.find(convertToId(p[0], p[1], n)) == uf.find(convertToId(p[0]-1, p[1], n))){
+             int x = p[0];
+             int y = p[1];
+             grid[x][y] = 1;
+             if(x > 0 && grid[x -1][y] == 1){ // check the upper element
+                 if(uf.find(convertToId(x, y, n)) == uf.find(convertToId(x-1, y, n))){
                      continue;
                  }else{
                      count--;
-                     uf.union(convertToId(p[0], p[1], n), convertToId(p[0]-1, p[1], n));
+                     uf.union(convertToId(x, y, n), convertToId(x-1, y, n));
                  }
              }
-             if(p[1] > 0 && grid[p[0]][p[1] -1] == 1) {
-                 if(uf.find(convertToId(p[0], p[1], n)) == uf.find(convertToId(p[0], p[1]-1, n))){
+             
+             if(x < m-1 && grid[x+1][y] == 1){ // check the bottom element
+                   if(uf.find(convertToId(x, y, n)) == uf.find(convertToId(x+1, y, n))){
                      continue;
                  }else{
                      count--;
-                     uf.union(convertToId(p[0], p[1], n), convertToId(p[0], p[1]-1, n));
+                     uf.union(convertToId(x, y, n), convertToId(x+1, y, n));
+                 } 
+             }
+             
+             if(y > 0 && grid[x][y -1] == 1) { // check the left element
+                 if(uf.find(convertToId(x, y, n)) == uf.find(convertToId(x, y-1, n))){
+                     continue;
+                 }else{
+                     count--;
+                     uf.union(convertToId(x, y, n), convertToId(x, y-1, n));
                  }
              }
+             
+             if(y < n-1 && grid[x][y + 1] == 1) { // check the right element
+                 if(uf.find(convertToId(x, y, n)) == uf.find(convertToId(x, y+1, n))){
+                     continue;
+                 }else{
+                     count--;
+                     uf.union(convertToId(x, y, n), convertToId(x, y+1, n));
+              }
+             
              result.add(count);
          }
          return result;
@@ -44,13 +66,13 @@ public class Solution {
         
         public int find(int x){
             int parent = x;
-            while(parent != father(parent)){
-                parent = father(parent);
+            while(parent != father.get(parent)){
+                parent = father.get(parent);
             }
             int tmp = -1;
             int fa = x;
-            while(fa != father(fa)){
-                tmp = father(fa);
+            while(fa != father.get(fa)){
+                tmp = father.get(fa);
                 father.put(tmp, parent);
                 fa = tmp;
             }
