@@ -1,4 +1,4 @@
-public TrieNode {
+public class TrieNode {
     char c;
     TrieNode[] children;
     boolean isWord;
@@ -29,8 +29,9 @@ public TrieNode {
     
 }
 
-
 public class WordDictionary {
+
+
     TrieNode root;
     public WordDictionary(){
         root = new TrieNode();
@@ -68,6 +69,7 @@ public class WordDictionary {
                          result = true;
                      }
                  }
+                 return result;
              }else{
                  if(!cur.containsKey(tmp)){
                      return false;
