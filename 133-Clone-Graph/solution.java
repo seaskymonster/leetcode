@@ -26,6 +26,7 @@ public class Solution {
             }
         }
         
+        System.out.println(q);
         q.offer(node);
         HashSet<UndirectedGraphNode> set = new HashSet<UndirectedGraphNode>();
         set.add(node);
