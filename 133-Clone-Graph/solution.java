@@ -18,7 +18,7 @@ public class Solution {
         while(!q.isEmpty()){
             UndirectedGraphNode cur = q.poll();
             for(UndirectedGraphNode nb : cur.neighbors){
-                if(!map.containsKey(nb)){
+                if(!map.containsKey(nb)){ // 在这里判断重复
                    UndirectedGraphNode copynb = new UndirectedGraphNode(nb.label);
                    map.put(nb, copynb);
                    q.offer(nb);
