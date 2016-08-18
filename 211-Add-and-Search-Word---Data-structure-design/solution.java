@@ -25,8 +25,6 @@ public class TrieNode {
         children[c-'a'] = node;
         return node;
     }
-    
-    
 }
 
 public class WordDictionary {
