@@ -17,11 +17,11 @@ public class Solution {
         
         while(!q.isEmpty()){
             UndirectedGraphNode cur = q.poll();
-            if(!map.containsKey(cur)){
-                for(UndirectedGraphNode nb : cur.neighbors){
-                     UndirectedGraphNode copynb = new UndirectedGraphNode(nb.label);
-                     map.put(nb, copynb);
-                     q.offer(nb);
+            for(UndirectedGraphNode nb : cur.neighbors){
+                if(!map.containsKey(nb)){
+                   UndirectedGraphNode copynb = new UndirectedGraphNode(nb.label);
+                   map.put(nb, copynb);
+                   q.offer(nb);
                 }
             }
         }
