@@ -20,7 +20,7 @@ public class Solution {
         int n = board[0].length;
         if(index == word.length()) return true;
         if(i < 0 || i >= m || j < 0 || j >= n ) return false;
-        if(board[i][j] != word.charAt(i)) return false;
+        if(board[i][j] != word.charAt(index)) return false;
         
           board[i][j] = '#'; // should remember to mark it
         
