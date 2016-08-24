@@ -20,6 +20,9 @@ public class Solution {
                 j++;
             }
             result = Math.max(j-i+1, result);
+            if(map.get(s.charAt(i)) == i){
+                distinctsize --;
+            }
             i++;
         }
         return result == Integer.MIN_VALUE ? 0 : result;
