@@ -7,8 +7,10 @@ public class Solution {
                 j++;
             }
             reverse(s, i, j-1);
-            i++;
+            i = j;
         }
+        
+        reverse(s, 0 , s.length()-1);
     }
     
     private void reverse(char[] s, int i, int j) {
