@@ -21,17 +21,19 @@ public class Solution {
     // }
     
     
-       public boolean isValidBST(TreeNode root) {
+      public boolean isValidBST(TreeNode root) {
         if(root == null){
             return true;
         }
-        return helper(root, Integer.MAX_VALUE, Integer.MIN_VALUE);
-       }
+        return helper(root, Long.MAX_VALUE, Long.MIN_VALUE);
+      }
        
-       public boolean (TreeNode root, int max, int min){
-           if(root == null){
-               return true;
-           }
-           return root.val < max && root.val > min && helper(root.left, root.val, min) && helper(root.right, max, root.val);
-       }
+      public boolean helper (TreeNode root, long max, long min){
+          if(root == null){
+              return true;
+          }
+          return (root.val < max) && (root.val > min) && helper(root.left, root.val, min) && helper(root.right, max, root.val);
+      }
+       
+       
 }
