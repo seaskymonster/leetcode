@@ -6,7 +6,7 @@ public class Solution {
             while(j < s.length && s[j] != ' '){
                 j++;
             }
-            reverse(i, j, s);
+            reverse(s, i, j);
             i++;
         }
     }
