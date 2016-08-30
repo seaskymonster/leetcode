@@ -11,7 +11,7 @@ public class Solution {
             }
         }
         
-        return t.charAt(t.length());
+        return t.charAt(t.length()-1);
         
         
     }
