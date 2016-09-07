@@ -3,12 +3,12 @@ public class WordDistance {
     public WordDistance(String[] words) {
         map = new HashMap<>();
         for(int i = 0; i < words.length; i++){
-            if(map.containsKey(word)){
-                map.get(word).add(i);
+            if(map.containsKey(words[i])){
+                map.get(words[i]).add(i);
             }else{
                 List<Integer> list = new ArrayList<>();
                 list.add(i);
-                map.put(word, list);
+                map.put(words[i], list);
             }
         }
     }
