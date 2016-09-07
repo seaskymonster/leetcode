@@ -17,7 +17,8 @@ public class WordDistance {
         List<Integer> l1 = map.get(word1);
         List<Integer> l2 = map.get(word2);
         int result = Integer.MAX_VALUE;
-        int i = j = 0;
+        int i = 0;
+        int j = 0;
         while(i <= l1.length && j <= l2.length){
             int pos1 = l1.get(i);
             int pos2 = l2.get(j);
