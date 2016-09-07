@@ -19,7 +19,7 @@ public class WordDistance {
         int result = Integer.MAX_VALUE;
         int i = 0;
         int j = 0;
-        while(i <= l1.length && j <= l2.length){
+        while(i < l1.size() && j < l2.size()){
             int pos1 = l1.get(i);
             int pos2 = l2.get(j);
             if(pos1 < pos2){
