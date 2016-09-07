@@ -6,7 +6,7 @@ public class WordDistance {
             if(map.containsKey(word)){
                 map.get(word).add(i);
             }else{
-                List<Integer> list = new ArrayList<>;
+                List<Integer> list = new ArrayList<>();
                 list.add(i);
                 map.put(word, list);
             }
