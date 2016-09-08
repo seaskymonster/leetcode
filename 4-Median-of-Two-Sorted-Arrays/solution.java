@@ -12,10 +12,10 @@ public class Solution {
     
     
     public int findfortheKth(int[] nums1, int[] nums2, int k, int s1, int e1, int s2, int e2){
-        if(s1 > e1){
+        if(s1 >= e1){
             return nums2[s2+k-1];
         }
-        if(s2 > e2) {
+        if(s2 >= e2) {
             return nums1[s1+k-1];
         }
         if(k == 1){
