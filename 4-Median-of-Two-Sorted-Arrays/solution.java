@@ -22,8 +22,8 @@ public class Solution {
             return Math.min(nums1[s1], nums2[s2]);
         }
          
-        int A_key = s1 + k/2 - 1 > e1 ? nums1[s1 + k/2 -1]: Integer.MAX_VALUE;
-        int B_key = s2 + k/2 - 1 > e2 ? nums2[s2 + k/2 -1]: Integer.MAX_VALUE;
+        int A_key = s1 + k/2 - 1 >= e1 ? nums1[s1 + k/2 -1]: Integer.MAX_VALUE;
+        int B_key = s2 + k/2 - 1 >= e2 ? nums2[s2 + k/2 -1]: Integer.MAX_VALUE;
         if(A_key > B_key){
            return findfortheKth(nums1, nums2, k-k/2, s1, e1, s2+k/2, e2);
         }else{
