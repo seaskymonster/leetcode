@@ -5,7 +5,7 @@ public class Solution {
             set.add(num);
         }
         int longest = 0;
-        for(int i =0; i < nums.lenght; i++){
+        for(int i =0; i < nums.length; i++){
             int down = nums[i] -1;
             while(set.contains(down)){
                 set.remove(down);
