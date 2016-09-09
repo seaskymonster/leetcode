@@ -16,12 +16,10 @@ var longestConsecutive = function(nums) {
         }
         
         var down = num -1;
-        while(down){
+        while(map[down]){
              delete map[down];
              down--;
         }
-        console.log('up', up);
-        console.log('down', down);
         result = Math.max(result, up-down-1);
     });
     return result;
