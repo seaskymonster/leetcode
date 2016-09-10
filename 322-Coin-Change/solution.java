@@ -5,7 +5,7 @@ public class Solution {
         f[0] = 0;
         for(int i = 1 ; i <= amount; i++){
             for(int j =0; j < coins.length; j++){
-                if(f[i -coins[j]] != -1){
+                if(i- conis[j] >= 0 && f[i -coins[j]] != -1){
                     f[i] = Math.min(f[i - coins[j]] +1, f[i]);
                 }  
             }
