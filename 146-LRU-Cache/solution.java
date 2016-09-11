@@ -3,7 +3,7 @@ public class LRUCache {
     HashMap<Integer, Node> cache;
     int capacity;
     Node head;
-    Node last;
+    Node tail;
     
     public LRUCache(int capacity) {
         cache = new HashMap<>();
