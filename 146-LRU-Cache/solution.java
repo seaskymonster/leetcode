@@ -44,18 +44,21 @@ public class LRUCache {
         if(cache.containsKey(key)){
             Node tmp = cache.get(key);
             tmp.val = value;
-            deletNode(tmp);
+            deleteNode(tmp);
             moveToHead(tmp);
             return;
         }else{
             if(cache.size() == capacity){
                 Node removeNode = tail.pre;
                 deleteNode(removeNode);
-                cache.remove(tail.pre.key);
+                cache.remove(removeNode.key);
+                 System.out.println("recache"+cache);
+
             }
               Node newNode = new Node(key, value);
                 cache.put(key, newNode);
                 moveToHead(newNode);
+                System.out.println("cache"+cache);
         }
     }
 }
