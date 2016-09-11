@@ -18,12 +18,12 @@ public class Solution {
     //   return pre;
     // }
     
-       public ListNode reverseList(ListNode head) {
+       public ListNode reverseList (ListNode head) {
            // if head is null or only one node, it's reverse of itself.
   if ( (head==null) || (head.next == null) ) return head;
 
   // reverse the sub-list leaving the head node.
-  ListNode reverse = reverse(head.next);
+  ListNode reverse = reverseList(head.next);
 
   // head.next still points to the last element of reversed sub-list.
   // so move the head to end.
