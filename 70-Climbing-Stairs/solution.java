@@ -1,13 +1,12 @@
 public class Solution {
     public int climbStairs(int n) {
-        if(n == 1) return 1;
-        if(n == 2) return 2;
-        int[] f = new int[n+1]; // f[i] represents different ways to the i step
-        f[1] = 1;
-        f[2] = 2; // remeber to initialize f[1] f[2]
-        for(int i = 3; i <= n; i++){
-            f[i] = f[i-1] + f[i-2];
+        int[] dp = new dp[n+1];
+        dp[0] = 1;
+        dp[1] = 1; // represent climbint to the floor 1
+        
+        for(int i =2; i<= n; i++){
+            dp[i] = dp[i-2] + dp[i-1];
         }
-        return f[n]; // should ask which step is the top, if n step is the top step, this is right
+        return dp[n];
     }
 }
