@@ -51,6 +51,7 @@ public class LRUCache {
             if(cache.size() == capacity){
                 Node removeNode = tail.pre;
                 deleteNode(removeNode);
+                System.out.println("tail.pre.key"+removeNode);
                 cache.remove(removeNode.key);
                  System.out.println("recache"+cache);
 
