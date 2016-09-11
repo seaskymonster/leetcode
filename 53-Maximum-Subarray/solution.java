@@ -1,37 +1,14 @@
 public class Solution {
-    // public int maxSubArray(int[] nums) {
-    //     if(nums.length == 0) {
-    //         return 0;
-    //     }
-    //     int[] f = new int[nums.length];
-    //     f[0] = nums[0];
-    //     for(int i = 1; i < nums.length; i++){
-    //         //f[i] = Math.max(f[i-1] + nums[i], nums[i]); 
-    //         f[i] = f[i-1] >=0 ? f[i-1]+nums[i] : nums[i];// the maxsum before is a negtive, drop it, if it is positive ,use it
-    //     }
-    //     int result = Integer.MIN_VALUE;
-    //     for(int j = 0; j < nums.length; j++){
-    //         result = f[j] > result ? f[j] : result;
-    //     }
-    //     return result;
-    // }
-    
-      public int maxSubArray(int[] nums) {
-        if(nums.length == 0) {
-            return 0;
+    public int maxSubArray(int[] nums) {
+        int[] dp = new int[nums.length]; // dp[i] represents the maximum subarray regard nums[i] as the end
+        dp[0] = nums[0];
+        for(int i = 1; i < dp.length; i++){
+            dp[i] = dp[i-1] > 0 ? dp[i-1] +nums[i] : nums[i];
         }
-        int[] sum = new int[nums.length+1];
-        sum[0] = 0;
-        for(int i = 1; i < sum.length; i++){
-            sum[i] = sum[i-1] + nums[i-1];  // 把这个array 转换成best time to sell stock的array
+        int result = Integer.MIN_VALUE;
+        for(int i = 0; i < dp.length; i++){
+            result = Math.max(result, dp[i]);
         }
-        
-        int min = Integer.MAX_VALUE;
-        int maxsub = Integer.MIN_VALUE;
-        for (int j = 0; j < sum.length; j++){
-            maxsub = Math.max(maxsub, sum[j]-min);
-            min = Math.min(min, sum[j]);
-        }
-        return maxsub;
+        return result;
     }
 }
