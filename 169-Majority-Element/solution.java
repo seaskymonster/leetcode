@@ -1,17 +1,19 @@
 public class Solution {
     public int majorityElement(int[] nums) {
+        int majority = nums[0];
         int count = 1;
-        int candidate = nums[0];
         for(int i = 1; i < nums.length; i++){
             if(count == 0){
-                candidate = nums[i];
-                count++;
-            }else if(nums[i] == candidate){ // 这个地方要用else if。。。。
+                majority = nums[i];
                 count++;
             }else{
-                count--;
+                if(nums[i] != majority){
+                    count--;
+                }else{
+                    count++;
+                }
             }
         }
-        return candidate;
+        return majority;
     }
 }
