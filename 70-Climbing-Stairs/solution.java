@@ -1,6 +1,6 @@
 public class Solution {
     public int climbStairs(int n) {
-        int[] dp = new dp[n+1];
+        int[] dp = new int[n+1];
         dp[0] = 1;
         dp[1] = 1; // represent climbint to the floor 1
         
