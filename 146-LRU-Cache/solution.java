@@ -61,7 +61,7 @@ public class LRUCache {
 }
 
 
-public class Node{
+ class Node{
     Node pre;
     Node next;
     int key;
