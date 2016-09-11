@@ -23,7 +23,7 @@ public class Solution {
   if ( (head==null) || (head.next == null) ) return head;
 
   // reverse the sub-list leaving the head node.
-  Node reverse = reverse(head.next);
+  ListNode reverse = reverse(head.next);
 
   // head.next still points to the last element of reversed sub-list.
   // so move the head to end.
