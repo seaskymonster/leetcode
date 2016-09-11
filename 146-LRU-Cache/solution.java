@@ -2,6 +2,7 @@ public class LRUCache {
     
     HashMap<Integer, Node> cache;
     int capacity;
+    int count;
     Node head;
     Node tail;
     
@@ -12,6 +13,7 @@ public class LRUCache {
         tail = new Node(0,0);
         head.next = tail;
         tail.pre = head;
+        count = 0;
     }
     
     public void deleteNode(Node node){
@@ -48,18 +50,17 @@ public class LRUCache {
             moveToHead(tmp);
             return;
         }else{
-            if(cache.size() == capacity){
+            if(count == capacity){
                 Node removeNode = tail.pre;
                 deleteNode(removeNode);
-                System.out.println("tail.pre.key"+removeNode);
                 cache.remove(removeNode.key);
-                 System.out.println("recache"+cache);
 
+            }else{
+                count++;
             }
-              Node newNode = new Node(key, value);
+                Node newNode = new Node(key, value);
                 cache.put(key, newNode);
                 moveToHead(newNode);
-                System.out.println("cache"+cache);
         }
     }
 }
