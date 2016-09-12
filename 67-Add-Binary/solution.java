@@ -7,7 +7,7 @@ public class Solution {
         }
         
         int pa = a.length()-1;
-        int pb = b.length()-1
+        int pb = b.length()-1;
         int carry = 0;
         String result = "";
         while(pb>=0){
