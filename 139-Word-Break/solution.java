@@ -4,7 +4,7 @@ public class Solution {
         dp[0] = true;
         for(int i =1; i<= s.length(); i++){
             for(int j = i-1; j >= 0; j--){
-                if(set.contains(s.substring(j, i))){
+                if(wordDict.contains(s.substring(j, i))){
                     if(dp[j] == true){
                         dp[i] = true;
                     }
