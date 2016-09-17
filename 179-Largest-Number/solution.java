@@ -1,7 +1,7 @@
 public class Solution {
     public String largestNumber(int[] nums) {
-        String sa = new String[nums.length];
-        for(int i =0; i < nums.lenght; i++){
+        String[] sa = new String[nums.length];
+        for(int i =0; i < nums.length; i++){
             sa[i] = Integer.toString(nums[i]);
         }
         
@@ -23,6 +23,6 @@ public class Solution {
 
 class NumberComparator implements Comparator<String>{
     public int compare(String a, String b){
-        return (b+a).CompareTo(a+b);
+        return (b+a).compareTo(a+b); // 把大的放在前面
     }
 }
