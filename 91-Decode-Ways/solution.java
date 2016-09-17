@@ -1,6 +1,6 @@
 public class Solution {
     public int numDecodings(String s) {
-        if(s == null || s.length() == 0) return null;
+        if(s == null || s.length() == 0) return 0;
         int[] dp = new int[s.length()];
         
         dp[0] = 1; // such as '26': dp[1] = 2;  
