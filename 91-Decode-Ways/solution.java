@@ -1,9 +1,10 @@
 public class Solution {
     public int numDecodings(String s) {
+        if(s == null || s.length() == 0) return null;
         int[] dp = new int[s.length()];
         
-        dp[0] = 0;
-        dp[1] = 1;
+        dp[0] = 1; // such as '26': dp[1] = 2;  
+        dp[1] = s.charAt(0) == '0' ? 0 : 1;
         for(int i =2; i <= s.length(); i++){
             if(s.charAt(i-1) != '0'){
                 dp[i] += dp[i-1];
