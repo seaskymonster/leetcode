@@ -1,6 +1,7 @@
 public class Solution {
     public int lengthOfLIS(int[] nums) {
-        int[] dp = new int[nums.length]; // dp[i] represent lengthofLIS at the end of nums[i];
+        int[] dp = new int[nums.length]; // dp[i] represent lengthofLIS at the end of nums[i] 
+   // must use nums[i] as the end of LIS;
         Arrays.fill(dp, 1); // for every element, the minum length is 1
         for(int i = 1; i < dp.length; i++){
             for(int j = 0; j < i; j++){
