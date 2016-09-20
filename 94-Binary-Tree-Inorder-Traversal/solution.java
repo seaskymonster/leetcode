@@ -19,8 +19,8 @@ public class Solution {
                 cur = cur.left;
             }
             
-            TreeNode tmp = stack.pop();
-            result.add(tmp.val);
+            cur = stack.pop();
+            result.add(cur.val);
             cur = cur.right;
         }
         return result;
