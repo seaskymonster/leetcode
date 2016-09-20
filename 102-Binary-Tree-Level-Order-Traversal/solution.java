@@ -10,20 +10,19 @@
 public class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
-        if(root == null) return result;
+        Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
         while(!q.isEmpty()){
             int size = q.size();
-            List<Integer> level = new ArrayList<Integer>();
-            for(int i = 0; i < size; i++){
-                TreeNode node = q.poll();
-                level.add(node.val);
-                if(node.left != null){
-                    q.offer(node.left);
+            List<Integer> level = new ArrayList<>();
+            for(int i =0; i <size; i++){
+                TreeNode tmp = q.poll();
+                level.add(tmp.val);
+                if(tmp.left != null){
+                    q.offer(tmp.left);
                 }
-                if(node.right != null){
-                    q.offer(node.right);
+                if(tmp.right != null){
+                    q.offer(tmp.right);
                 }
             }
             result.add(level);
