@@ -16,8 +16,10 @@ public class Solution {
     private void reverse(char[] s, int i, int j) {
         while (i < j) {
             char tmp = s[i];
-            s[i++] = s[j];
-            s[j--] = tmp;
+            s[i] = s[j];
+            s[j] = tmp;
+            i++;
+            j--;
         }
     }
 }
