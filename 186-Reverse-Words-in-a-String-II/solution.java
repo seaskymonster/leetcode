@@ -7,7 +7,7 @@ public class Solution {
                 j++;
             }
             reverse(s, i, j-1);
-            i = j;
+            i = j+1;
         }
         
         reverse(s, 0 , s.length-1);
