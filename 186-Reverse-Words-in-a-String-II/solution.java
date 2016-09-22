@@ -7,6 +7,7 @@ public class Solution {
                 j++;
             }
             reverse(s, i, j-1);
+            System.out.println("j "+j);
             i = j+1;
         }
         
