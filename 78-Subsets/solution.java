@@ -8,14 +8,14 @@ public class Solution {
     }
     
     public void dfs(List<List<Integer>> result, List<Integer> path, int pos, int[] nums){
-        if(pos >= nums.length) return;
-        if(path != null){
-           result.add(new ArrayList<>(path));
-        }
+        // if(pos >= nums.length) return;
+      
+        result.add(new ArrayList<>(path));
+
         for(int i = pos; i < nums.length; i++){
             path.add(nums[i]);
-            dfs(result, path, pos+1, nums);
-            path.remove(path.length()-1);
+            dfs(result, path, i+1, nums);
+            path.remove(path.size()-1);
         }
     }
 }
