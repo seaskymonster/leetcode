@@ -8,7 +8,7 @@ public class Solution {
     }
     
     public void dfs(List<List<Integer>> result, List<Integer> path, int pos, int[] nums){
-        // if(pos >= nums.length) return;
+        if(pos > nums.length) return;
       
         result.add(new ArrayList<>(path));
 
