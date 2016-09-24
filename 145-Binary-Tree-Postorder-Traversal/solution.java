@@ -14,6 +14,7 @@ public class Solution {
         TreeNode cur = root;
         while(!stack.isEmpty() || cur!=null){
             while(cur != null){
+                stack.push(cur);
                 result.addFirst(cur.val);
                 cur = cur.right;
             }
