@@ -16,16 +16,15 @@ public class Solution {
     }
     
     public ReturnType helper(TreeNode root) {
-        if(root == null) return new ReturnType(Integer.MIN_VALUE, 0);
+        if(root == null) return new ReturnType(Integer.MIN_VALUE, Integer.MIN_VALUE);
         ReturnType left = helper(root.left);
         ReturnType right = helper(root.right);
         
         int maxPath = Math.max(left.maxPath, right.maxPath);
-        maxPath = Math.max(maxPath,left.singlePath + right.singlePath + root.val);
+        maxPath = Math.max(maxPath, Math.max(0, left.singlePath) + Math.max(0, right.singlePath) + root.val);
         
-        int singlePath = Math.max(left.singlePath, right.singlePath);
-        singlePath = Math.max(singlePath + root.val, 0);
-        
+        int singlePath = root.val+ Math.max(0, Math.max(left.singlePath,  right.singlePath));
+      
         return new ReturnType(maxPath, singlePath);
         
     }
