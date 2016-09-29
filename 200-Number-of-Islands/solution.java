@@ -17,21 +17,21 @@ public class Solution {
                 }else{
                    count++;
                    if(i > 0 && grid[i-1][j] == '1'){
-                      if(uf.compressed_find (convertToId(i, j, n)) == uf.compressed_find(convertToId(i-1, j, n))){
-                          continue;
-                      }else{
+                       if(uf.compressed_find (convertToId(i, j, n)) == uf.compressed_find(convertToId(i-1, j, n))){
+                           continue;
+                       }else{
                           count--;
                           uf.union(convertToId(i, j, n), convertToId(i-1, j, n));
-                       
+                       }
                    }
                    
                    if(j > 0 && grid[i][j-1] == '1'){
-                      if(uf.compressed_find (convertToId(i, j, n)) == uf.compressed_find(convertToId(i, j-1, n))){
-                          continue;
-                      }else{
+                       if(uf.compressed_find (convertToId(i, j, n)) == uf.compressed_find(convertToId(i, j-1, n))){
+                           continue;
+                       }else{
                            count--;
                            uf.union(convertToId(i, j, n), convertToId(i, j-1, n));
-                       
+                       }
                    }
                 }
             }
