@@ -1,20 +1,34 @@
 public class Solution {
+    public int convertToId(int x, int y, int n){
+        return n*x + y;
+    }
   
     public int numIslands(char[][] grid) {
         int m = grid.length;
+        if(m == 0) return 0;
         int n = grid[0].length;
-        // UF uf = new UF(m, n);
+        if(n == 0) return 0;
+        UF uf = new UF(m, n);
         int count = 0;
         for(int i = 0; i < m; i++){
             for(int j = 0; j < n; j++){
                 if(grid[i][j] == '1'){
                     count++;
                     if(i > 0 && grid[i-1][j] == '1'){
-                        count--;
-                        continue;
+                      if(uf.find (convertToId(i, j, n)) == uf.compressed_find(convertToId(i-1, j, n))){
+                           continue;
+                       }else{
+                          count--;
+                          uf.union(convertToId(i, j, n), convertToId(i-1, j, n));
+                       }
                     }
                     if(j > 0 && grid[i][j-1] == '1'){
-                        count--;
+                        if(uf.find (convertToId(i, j, n)) == uf.find(convertToId(i, j-1, n))){
+                           continue;
+                       }else{
+                           count--;
+                           uf.union(convertToId(i, j, n), convertToId(i, j-1, n));
+                       }
                     }
                 }
             }
