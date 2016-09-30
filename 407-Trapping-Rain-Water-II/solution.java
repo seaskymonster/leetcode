@@ -48,7 +48,7 @@ public class Solution {
                int ny = tmp.y + dy[i];
                if( nx >= 0 && ny >= 0 && nx < m && ny <n && visited[nx][ny] == 0){
                    visited[nx][ny] = 1;
-                   pq.offer(new Cell(nx, ny, Math.max(tmp.h, heightMap[nx][ny])));
+                   pq.offer(new Cell(nx, ny, Math.max(tmp.h, heightMap[nx][ny]))); // this is easy to wrong
                    result = result + Math.max(0, tmp.h- heightMap[nx][ny]);
                }
             }
