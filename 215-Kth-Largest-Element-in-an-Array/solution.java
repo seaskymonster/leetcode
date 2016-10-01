@@ -67,21 +67,22 @@ public class Solution {
     public int partition(int[] nums, int start, int end, int k){
         System.out.println("start"+start+"end"+end+"k"+k);
         if(start == end) return start;
-        int pivot = nums[(start + end)/2];
+        int pivot = nums[left];
         int i = start;
         int j = end;
         while(i < j){
-            while(i < j && nums[i] < pivot){
-                i++;
-            }
-            
-            while(i < j && nums[j] > pivot){
+            while(i < j && nums[j] >= pivot){
                 j--;
             }
-            int tmp = nums[i];
             nums[i] = nums[j];
-            nums[j] = tmp;
+            
+            while(i < j && nums[i] <= pivot){
+                i++;
+            }
+            nums[j] = nums[i];
         }
+        
+        nums[i] = pivot;
         if( i +1 == k){
             return i;
         }else if(i + 1 < k){
