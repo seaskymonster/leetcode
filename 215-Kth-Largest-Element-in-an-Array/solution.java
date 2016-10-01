@@ -65,6 +65,7 @@ public class Solution {
     }
     
     public int partition(int[] nums, int start, int end, int k){
+        System.out.prinln("start"+start+"end"+end+"k"+k);
         if(start == end) return start;
         int pivot = nums[(start + end)/2];
         int i = start;
