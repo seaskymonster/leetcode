@@ -6,7 +6,7 @@ public class Solution {
         
         while(start < end){
             result = Math.max(result, (end - start)*Math.min(height[start], height[end]));
-            if(height[start] < height[end]){
+            if(height[start] <= height[end]){
                 start++;
             }else{
                 end--;
