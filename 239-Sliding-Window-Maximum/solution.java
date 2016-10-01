@@ -1,6 +1,6 @@
 public class Solution {
     public void addElement(Deque<Integer> dq, int element){
-        while(!dq.isEmpty() && dq.peekLast() <= element){
+        while(!dq.isEmpty() && dq.peekLast() < element){
             dq.pollLast();
         }
         dq.offerLast(element);
