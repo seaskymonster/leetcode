@@ -75,7 +75,7 @@ public class Solution {
             }
             
             while(i < j && nums[j] > pivot){
-                end --;
+                j--;
             }
             int tmp = nums[i];
             nums[i] = nums[j];
