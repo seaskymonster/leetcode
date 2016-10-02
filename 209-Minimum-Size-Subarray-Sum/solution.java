@@ -32,11 +32,15 @@ public class Solution {
                 sum += nums[j];
                 j++;
             }
+            System.out.println("i "+i);
+            System.out.println("j "+j);
             if(sum >= s){
-                result = Math.min(result, j-i+1);
+                result = Math.min(result, j-i);
             }
             sum -= nums[i];
         }
+        if(result == Integer.MAX_VALUE)
+            result = 0;
         return result;
     }
 }
