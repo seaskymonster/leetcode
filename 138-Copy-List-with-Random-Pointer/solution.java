@@ -8,6 +8,7 @@
  */
 public class Solution {
     public RandomListNode copyRandomList(RandomListNode head) {
+        if(head == null || head.next = null) return head;
         HashMap<RandomListNode, RandomListNode> map = new HashMap<>();
         RandomListNode cur = head;
         RandomListNode newHead = new RandomListNode(head.label);
@@ -24,6 +25,7 @@ public class Solution {
         
         while(cur != null){
             RandomListNode curRandom = cur.random;
+            
             RandomListNode newCurRandom = map.get(curRandom);
             newCur.random = newCurRandom;
             cur = cur.next;
