@@ -1,25 +1,4 @@
 public class Solution {
-    // public int minSubArrayLen(int s, int[] nums) {
-    //     if(nums == null || nums.length == 0) return 0;
-    //     int i = 0;
-    //     int j = 0;
-    //     int result = Integer.MAX_VALUE;
-    //     int sum = 0;
-        
-    //     while(i<j && j < nums.length){
-    //         if(sum >= s){
-    //             result = Math.min(result, j-i+1);
-    //             sum = sum - nums[i];
-    //             i++;
-    //         }else{
-    //             sum = sum + nums[j];
-    //             j++;
-    //         }
-    //     }
-    //     return result;
-    // }
-    
-    
      public int minSubArrayLen(int s, int[] nums) {
         if(nums == null || nums.length == 0) return 0;
     
