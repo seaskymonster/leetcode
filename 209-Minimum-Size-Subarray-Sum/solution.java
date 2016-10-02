@@ -32,8 +32,8 @@ public class Solution {
                 sum += nums[j];
                 j++;
             }
-            System.out.println("i "+i);
-            System.out.println("j "+j);
+            // System.out.println("i "+i);
+            // System.out.println("j "+j);
             if(sum >= s){
                 result = Math.min(result, j-i);
             }
