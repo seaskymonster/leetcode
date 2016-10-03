@@ -7,33 +7,44 @@
  * };
  */
 public class Solution {
-    public RandomListNode copyRandomList(RandomListNode head) {
-        if(head == null) return head;
-        HashMap<RandomListNode, RandomListNode> map = new HashMap<>();
-        RandomListNode cur = head;
-        RandomListNode newHead = new RandomListNode(head.label);
-        RandomListNode newCur = newHead;
-        map.put(head, newHead);
-        
-        while(cur.next != null){
-            newCur.next = new RandomListNode(cur.next.label);
-            map.put(cur.next, newCur.next);
-            cur = cur.next;
-            newCur = newCur.next;
+    private void copyNext(RandomListNode head) {
+        while (head != null) {
+            RandomListNode newNode = new RandomListNode(head.label);
+            newNode.random = head.random;
+            newNode.next = head.next;
+            head.next = newNode;
+            head = head.next.next;
         }
-        
-        cur = head;
-        newCur = newHead;
-        
-        while(cur != null){
-            RandomListNode curRandom = cur.random;
-            if(curRandom != null){
-                RandomListNode newCurRandom = map.get(curRandom);
-                newCur.random = newCurRandom;
+    }
+
+    private void copyRandom(RandomListNode head) {
+        while (head != null) {
+            if (head.next.random != null) {
+                head.next.random = head.random.next;
             }
-            cur = cur.next;
-            newCur = newCur.next;
+            head = head.next.next;
+        }
+    }
+
+    private RandomListNode splitList(RandomListNode head) {
+        RandomListNode newHead = head.next;
+        while (head != null) {
+            RandomListNode temp = head.next;
+            head.next = temp.next;
+            head = head.next;
+            if (temp.next != null) {
+                temp.next = temp.next.next;
+            }
         }
         return newHead;
+    }
+
+    public RandomListNode copyRandomList(RandomListNode head) {
+        if (head == null) {
+            return null;
+        }
+        copyNext(head);
+        copyRandom(head);
+        return splitList(head);
     }
 }
