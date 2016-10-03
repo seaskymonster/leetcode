@@ -25,7 +25,7 @@ public class Solution {
         return 0;
     }
     public String replace(String s, int i, char j){
-        char[] ca = s.toCharArry();
+        char[] ca = s.toCharArray();
         ca[i] = j;
         return ca.toString();
     }
