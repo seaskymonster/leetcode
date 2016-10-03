@@ -1,33 +1,33 @@
 public class Solution {
     public boolean exist(char[][] board, String word) {
+        if(board == null) return false;
         int m = board.length;
+        if(m == 0) return false;
         int n = board[0].length;
-        int index = 0;
-        
+        if(n == 0) return false;
         for(int i = 0; i < m; i++){
             for(int j = 0; j < n; j++){
-                if(board[i][j] == word.charAt(index)){
-                    boolean rst= helper(i, j, board, word, 0);
-                    if(rst) return true;
+                if(dfs(i, j, board, 0, word)){
+                    return true;
                 }
             }
         }
         return false;
     }
     
-    public boolean helper(int i, int j, char[][] board, String word, int index){
+    public boolean dfs(int i, int j, char[][] board, int index, String word){
+        if(index == word.length()) return true;
         int m = board.length;
         int n = board[0].length;
-        if(index == word.length()) return true;
-        if(i < 0 || i >= m || j < 0 || j >= n ) return false;
-        if(board[i][j] != word.charAt(index)) return false;
-        
-          board[i][j] = '#'; // should remember to mark it
-        
-        boolean rst= helper(i-1, j, board, word, index+1) || helper(i+1, j, board, word, index+1) || helper(i, j-1, board, word, index+1) || helper(i, j+1, board, word, index+1);
-        board[i][j] = word.charAt(index); // 你上个dfs 弄完了，那你要恢复。
-        
-        return rst;
-
+        if(i < 0 || j < 0 || i >= m || j >=n || board[i][j] == '*') return false;
+        if(word.charAt(index) != board[i][j]) return false;
+        char tmp = board[i][j];
+        board[i][j] = '*';
+        boolean result = dfs(i-1, j, board, index+1, word) ||
+                         dfs(i, j-1, board, index+1, word) ||
+                         dfs(i, j+1, board, index+1, word) ||
+                         dfs(i+1, j, board, index+1, word);
+        board[i][j] = tmp;
+        return result;
     }
 }
