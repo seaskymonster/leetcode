@@ -17,7 +17,7 @@ public class Solution {
                     if(endWord.equals(str)) return length;
                     if(!set.contains(str)){
                         q.offer(str);
-                        set.put(str);
+                        set.add(str);
                     }
                 }
              }
