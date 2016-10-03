@@ -1,43 +1,41 @@
 public class Solution {
     public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
-        if(wordList == null) return 0;
-        Queue<String> q = new LinkedList<String>();
-        HashSet<String> set = new HashSet<String>();
+        Queue<String> q = new LinkedList<>();
         q.offer(beginWord);
+        HashSet<String> set = new HashSet<>();
         set.add(beginWord);
+        
         int length = 1;
         
         while(!q.isEmpty()){
             length++;
             int size = q.size();
             for(int i = 0; i < size; i++){
-                String cur = q.poll();
-                for(String s : getNextWords(cur, wordList)){
-                    if(set.contains(s)){
-                        continue;
+                String tmp = q.poll();
+                ArrayList<String> possible = getPossible(tmp, wordList);
+                for(String str: possible){
+                    if(endWord.equals(str)) return length;
+                    if(!set.contains(str)){
+                        q.offer(str);
+                        set.put(str);
                     }
-                    if(s.equals(endWord)){
-                        return length;
-                    }
-                    q.offer(s);
-                    set.add(s);
                 }
-            }
+             }
         }
         return 0;
     }
-    public String replace (char c, int i, String word){
-        char[] ca = word.toCharArray();
-        ca[i] = c;
-        return new String(ca);
+    public String replace(String s, int i, char j){
+        char[] ca = s.toCharArry();
+        ca[i] = j;
+        return ca.toString();
     }
-    public ArrayList<String> getNextWords(String word, Set<String> wordList){
-        ArrayList<String> result = new ArrayList<String>();
-        for(char c = 'a'; c <= 'z'; c++){
-            for(int i = 0; i < word.length(); i++){
-                String newword = replace(c, i, word);
-                if(wordList.contains(newword)){
-                    result.add(newword);
+    public ArrayList<String> getPossible(String s, Set<String> wordList){
+        ArrayList<String> result = new ArrayList<>();
+        for(int i = 0; i < s.length(); i++){
+            for(char j = 'a'; j <= 'z'; j++){
+                String p = replace(s, i, j);
+                if(Set.contains(p)){
+                    result.add(p);
                 }
             }
         }
