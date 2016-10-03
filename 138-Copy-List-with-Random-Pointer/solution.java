@@ -8,11 +8,13 @@
  */
 public class Solution {
     public RandomListNode copyRandomList(RandomListNode head) {
-        if(head == null || head.next = null) return head;
+        if(head == null) return head;
         HashMap<RandomListNode, RandomListNode> map = new HashMap<>();
         RandomListNode cur = head;
         RandomListNode newHead = new RandomListNode(head.label);
         RandomListNode newCur = newHead;
+        map.put(head, newHead);
+        
         while(cur.next != null){
             newCur.next = new RandomListNode(cur.next.label);
             map.put(cur.next, newCur.next);
@@ -25,9 +27,10 @@ public class Solution {
         
         while(cur != null){
             RandomListNode curRandom = cur.random;
-            
-            RandomListNode newCurRandom = map.get(curRandom);
-            newCur.random = newCurRandom;
+            if(curRandom != null){
+                RandomListNode newCurRandom = map.get(curRandom);
+                newCur.random = newCurRandom;
+            }
             cur = cur.next;
             newCur = newCur.next;
         }
