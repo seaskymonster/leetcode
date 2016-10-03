@@ -27,14 +27,14 @@ public class Solution {
     public String replace(String s, int i, char j){
         char[] ca = s.toCharArray();
         ca[i] = j;
-        return ca.toString();
+        return new String(ca);
     }
     public ArrayList<String> getPossible(String s, Set<String> wordList){
         ArrayList<String> result = new ArrayList<>();
         for(int i = 0; i < s.length(); i++){
             for(char j = 'a'; j <= 'z'; j++){
                 String p = replace(s, i, j);
-                if(Set.contains(p)){
+                if(wordList.contains(p)){
                     result.add(p);
                 }
             }
